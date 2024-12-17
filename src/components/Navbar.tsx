@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,12 +16,9 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
-    }
+  const navigateToSection = (sectionId: string) => {
+    navigate(`/#${sectionId}`);
+    setIsOpen(false);
   };
 
   return (
@@ -48,7 +47,7 @@ const Navbar = () => {
                 key={section}
                 variant="ghost"
                 className="text-secondary hover:text-primary capitalize"
-                onClick={() => scrollToSection(section)}
+                onClick={() => navigateToSection(section)}
               >
                 {section}
               </Button>
@@ -64,7 +63,7 @@ const Navbar = () => {
                 key={section}
                 variant="ghost"
                 className="w-full text-left capitalize py-2 px-6"
-                onClick={() => scrollToSection(section)}
+                onClick={() => navigateToSection(section)}
               >
                 {section}
               </Button>
