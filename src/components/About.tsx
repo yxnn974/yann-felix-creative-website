@@ -1,4 +1,5 @@
-import { User, Mail, MapPin } from "lucide-react";
+import { User, Mail, MapPin, Download, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const About = () => {
   return (
@@ -39,6 +40,16 @@ const About = () => {
                 <MapPin size={20} className="text-primary" />
                 <span>IUT de La Réunion</span>
               </div>
+            </div>
+            <div className="flex gap-4 pt-6">
+              <Button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="gap-2">
+                <Send size={20} />
+                Me contacter
+              </Button>
+              <Button variant="outline" className="gap-2">
+                <Download size={20} />
+                Télécharger mon CV
+              </Button>
             </div>
           </div>
         </div>
