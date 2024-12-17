@@ -20,12 +20,20 @@ const About = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               Actuellement étudiant en BUT Réseaux et Télécommunications à l'IUT de La Réunion,
               je suis passionné par les nouvelles technologies et particulièrement intéressé
-              par la virtualisation et l'automatisation réseau.
+              par la gestion des réseaux et la cybersécurité.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed">
               Mon objectif est de me spécialiser dans ces domaines et d'obtenir des certifications
               reconnues comme CCNA et CCNP. Je suis constamment à la recherche de nouvelles
               opportunités d'apprentissage et de défis techniques.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Je suis enthousiaste à l'idée de collaborer sur des projets innovants et d'échanger
+              des idées avec d'autres passionnés du domaine.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement
+              pour échanger sur nos passions communes dans le domaine des réseaux !
             </p>
             <div className="space-y-4 pt-4">
               <div className="flex items-center gap-4 text-gray-600">
