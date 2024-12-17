@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Github, Linkedin, Download } from "lucide-react";
+import { GraduationCap, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -8,7 +8,6 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fadeIn">
-              Bonjour, je suis{" "}
               <span className="text-primary">Yann FELIX</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8 animate-fadeIn" style={{ animationDelay: "0.2s" }}>
@@ -21,10 +20,6 @@ const Hero = () => {
               >
                 <GraduationCap size={20} />
                 En savoir plus
-              </Button>
-              <Button variant="outline" className="gap-2">
-                <Download size={20} />
-                Télécharger CV
               </Button>
             </div>
             <div className="flex gap-4 mt-8 justify-center md:justify-start animate-fadeIn" style={{ animationDelay: "0.6s" }}>
@@ -48,8 +43,8 @@ const Hero = () => {
           </div>
           <div className="flex-1 max-w-md animate-fadeIn" style={{ animationDelay: "0.8s" }}>
             <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
-              alt="Code on screen"
+              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+              alt="Data Center"
               className="rounded-lg shadow-2xl"
             />
           </div>
