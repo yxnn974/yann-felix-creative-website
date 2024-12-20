@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +26,16 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/90 backdrop-blur-md shadow-md" : "bg-transparent"
+        isScrolled ? "bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <span className="text-xl font-bold text-primary">Yann FELIX</span>
+          <div className="flex items-center gap-4">
+            <span className="text-xl font-bold text-primary dark:text-white">Yann FELIX</span>
+            <ThemeToggle />
+            <LanguageToggle />
+          </div>
           
           {/* Mobile menu button */}
           <button
@@ -46,7 +52,7 @@ const Navbar = () => {
               <Button
                 key={section}
                 variant="ghost"
-                className="text-secondary hover:text-primary capitalize"
+                className="text-secondary hover:text-primary dark:text-white dark:hover:text-primary capitalize"
                 onClick={() => navigateToSection(section)}
               >
                 {section}
@@ -57,12 +63,12 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg py-4">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 shadow-lg py-4">
             {["about", "education", "skills", "projects", "contact"].map((section) => (
               <Button
                 key={section}
                 variant="ghost"
-                className="w-full text-left capitalize py-2 px-6"
+                className="w-full text-left capitalize py-2 px-6 dark:text-white"
                 onClick={() => navigateToSection(section)}
               >
                 {section}
