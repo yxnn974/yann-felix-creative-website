@@ -1,4 +1,3 @@
-import { User, Mail, MapPin, Download, Send, Languages, Bike, Basketball } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -47,7 +46,6 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
-                    <Languages className="text-primary" size={20} />
                     <span className="font-semibold">Langues</span>
                   </div>
                 </CollapsibleTrigger>
@@ -67,7 +65,6 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
-                    <Basketball className="text-primary" size={20} />
                     <span className="font-semibold">Centre d'intérêts</span>
                   </div>
                 </CollapsibleTrigger>
@@ -87,7 +84,6 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
-                    <Bike className="text-primary" size={20} />
                     <span className="font-semibold">Déplacements</span>
                   </div>
                 </CollapsibleTrigger>
@@ -102,25 +98,20 @@ const About = () => {
 
             <div className="space-y-4 pt-4">
               <div className="flex items-center gap-4 text-gray-600">
-                <User size={20} className="text-primary" />
                 <span>Yann FELIX</span>
               </div>
               <div className="flex items-center gap-4 text-gray-600">
-                <Mail size={20} className="text-primary" />
                 <span>yann.felix@example.com</span>
               </div>
               <div className="flex items-center gap-4 text-gray-600">
-                <MapPin size={20} className="text-primary" />
                 <span>IUT de La Réunion</span>
               </div>
             </div>
             <div className="flex gap-4 pt-6">
-              <Button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="gap-2">
-                <Send size={20} />
+              <Button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
                 Me contacter
               </Button>
-              <Button variant="outline" className="gap-2">
-                <Download size={20} />
+              <Button variant="outline">
                 Télécharger mon CV
               </Button>
             </div>
