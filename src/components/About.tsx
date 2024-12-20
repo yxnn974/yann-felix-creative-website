@@ -1,5 +1,10 @@
-import { User, Mail, MapPin, Download, Send } from "lucide-react";
+import { User, Mail, MapPin, Download, Send, Languages, Bike, Football } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const About = () => {
   return (
@@ -8,7 +13,7 @@ const About = () => {
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           À propos de moi
         </h2>
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        <div className="flex flex-col md:flex-row items-start gap-12">
           <div className="flex-1">
             <img
               src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
@@ -35,6 +40,66 @@ const About = () => {
               N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement
               pour échanger sur nos passions communes dans le domaine des réseaux !
             </p>
+
+            {/* Sections collapsibles */}
+            <div className="space-y-4 mt-8">
+              {/* Langues */}
+              <Collapsible className="border rounded-lg p-4">
+                <CollapsibleTrigger className="flex items-center justify-between w-full">
+                  <div className="flex items-center gap-2">
+                    <Languages className="text-primary" size={20} />
+                    <span className="font-semibold">Langues</span>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-4 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span>Français</span>
+                    <span className="text-gray-500">Langue maternelle</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Anglais</span>
+                    <span className="text-gray-500">B1</span>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Centres d'intérêts */}
+              <Collapsible className="border rounded-lg p-4">
+                <CollapsibleTrigger className="flex items-center justify-between w-full">
+                  <div className="flex items-center gap-2">
+                    <Football className="text-primary" size={20} />
+                    <span className="font-semibold">Centre d'intérêts</span>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-4 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span>Sports</span>
+                    <span className="text-gray-500">Judo</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span>Nouvelles technologies</span>
+                    <span className="text-gray-500">Veille technologique</span>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+
+              {/* Déplacements */}
+              <Collapsible className="border rounded-lg p-4">
+                <CollapsibleTrigger className="flex items-center justify-between w-full">
+                  <div className="flex items-center gap-2">
+                    <Bike className="text-primary" size={20} />
+                    <span className="font-semibold">Déplacements</span>
+                  </div>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="pt-4 space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span>Permis B</span>
+                    <span className="text-gray-500">Véhiculé</span>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+
             <div className="space-y-4 pt-4">
               <div className="flex items-center gap-4 text-gray-600">
                 <User size={20} className="text-primary" />

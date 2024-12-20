@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { GraduationCap, Github, Linkedin } from "lucide-react";
+import { GraduationCap, Github, Gitlab, Twitter, Linkedin } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -30,6 +30,22 @@ const Hero = () => {
                 className="text-gray-600 hover:text-primary transition-colors"
               >
                 <Github size={24} />
+              </a>
+              <a
+                href="https://gitlab.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                <Gitlab size={24} />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-primary transition-colors"
+              >
+                <Twitter size={24} />
               </a>
               <a
                 href="https://linkedin.com"
