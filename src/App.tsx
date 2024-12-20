@@ -6,7 +6,9 @@ function App() {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <Router>
-        <Index />
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+          <Index />
+        </div>
       </Router>
     </ThemeProvider>
   );

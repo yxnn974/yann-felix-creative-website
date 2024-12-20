@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Globe, Basketball, Mountains } from "lucide-react";
 
 const About = () => {
   return (
@@ -51,6 +52,7 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4 dark:border-gray-700">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
+                    <Globe className="h-5 w-5 dark:text-gray-300" />
                     <span className="font-semibold dark:text-white">Langues</span>
                   </div>
                 </CollapsibleTrigger>
@@ -76,6 +78,7 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4 dark:border-gray-700">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
+                    <Basketball className="h-5 w-5 dark:text-gray-300" />
                     <span className="font-semibold dark:text-white">Centre d'intérêts</span>
                   </div>
                 </CollapsibleTrigger>
@@ -86,7 +89,12 @@ const About = () => {
                       <AccordionContent>Pratique régulière en club</AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="hiking">
-                      <AccordionTrigger>Randonnée</AccordionTrigger>
+                      <AccordionTrigger>
+                        <div className="flex items-center gap-2">
+                          <Mountains className="h-4 w-4" />
+                          Randonnée
+                        </div>
+                      </AccordionTrigger>
                       <AccordionContent>Exploration des sentiers de La Réunion</AccordionContent>
                     </AccordionItem>
                   </Accordion>
