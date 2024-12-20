@@ -1,4 +1,4 @@
-import { User, Mail, MapPin, Download, Send, Languages, Bike, Football } from "lucide-react";
+import { User, Mail, MapPin, Download, Send, Languages, Bike, Basketball } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Collapsible,
@@ -67,7 +67,7 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
-                    <Football className="text-primary" size={20} />
+                    <Basketball className="text-primary" size={20} />
                     <span className="font-semibold">Centre d'intérêts</span>
                   </div>
                 </CollapsibleTrigger>
