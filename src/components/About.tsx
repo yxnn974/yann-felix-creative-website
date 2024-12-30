@@ -10,7 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Globe, Activity, Mountain } from "lucide-react";
+import { Globe, Activity, Mountain, Music, Film, Car, MapPin } from "lucide-react";
 
 const About = () => {
   return (
@@ -85,7 +85,12 @@ const About = () => {
                 <CollapsibleContent className="pt-4">
                   <Accordion type="single" collapsible>
                     <AccordionItem value="basketball">
-                      <AccordionTrigger>Basketball</AccordionTrigger>
+                      <AccordionTrigger>
+                        <div className="flex items-center gap-2">
+                          <Activity className="h-4 w-4" />
+                          Basketball
+                        </div>
+                      </AccordionTrigger>
                       <AccordionContent>Pratique régulière en club</AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="hiking">
@@ -97,6 +102,24 @@ const About = () => {
                       </AccordionTrigger>
                       <AccordionContent>Exploration des sentiers de La Réunion</AccordionContent>
                     </AccordionItem>
+                    <AccordionItem value="music">
+                      <AccordionTrigger>
+                        <div className="flex items-center gap-2">
+                          <Music className="h-4 w-4" />
+                          Musique
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>Passionné de musique</AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="cinema">
+                      <AccordionTrigger>
+                        <div className="flex items-center gap-2">
+                          <Film className="h-4 w-4" />
+                          Cinéma
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>Amateur de cinéma</AccordionContent>
+                    </AccordionItem>
                   </Accordion>
                 </CollapsibleContent>
               </Collapsible>
@@ -105,13 +128,19 @@ const About = () => {
               <Collapsible className="border rounded-lg p-4 dark:border-gray-700">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
+                    <MapPin className="h-5 w-5 dark:text-gray-300" />
                     <span className="font-semibold dark:text-white">Déplacements</span>
                   </div>
                 </CollapsibleTrigger>
                 <CollapsibleContent className="pt-4">
                   <Accordion type="single" collapsible>
                     <AccordionItem value="license">
-                      <AccordionTrigger>Permis B</AccordionTrigger>
+                      <AccordionTrigger>
+                        <div className="flex items-center gap-2">
+                          <Car className="h-4 w-4" />
+                          Permis B
+                        </div>
+                      </AccordionTrigger>
                       <AccordionContent>Véhiculé</AccordionContent>
                     </AccordionItem>
                   </Accordion>

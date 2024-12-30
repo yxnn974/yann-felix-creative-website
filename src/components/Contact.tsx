@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -16,7 +16,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically handle the form submission
     toast({
       title: "Message envoyé !",
       description: "Merci de m'avoir contacté. Je vous répondrai dès que possible.",
@@ -32,42 +31,45 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">
           Contact
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <div>
-            <h3 className="text-xl font-semibold mb-6">Contactez-moi</h3>
+          <div className="space-y-6">
+            <h3 className="text-xl font-semibold mb-6 dark:text-white">Contactez-moi</h3>
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-primary">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-primary">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <p className="font-medium">Email</p>
-                  <p className="text-gray-600">yann.felix@example.com</p>
+                  <p className="font-medium dark:text-white">Email</p>
+                  <p className="text-gray-600 dark:text-gray-300">yann.felix@example.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-primary">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <p className="font-medium">Téléphone</p>
-                  <p className="text-gray-600">+262 6XX XXX XXX</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-primary">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-primary">
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="font-medium">Adresse</p>
-                  <p className="text-gray-600">IUT de La Réunion</p>
+                  <p className="font-medium dark:text-white">Adresse</p>
+                  <p className="text-gray-600 dark:text-gray-300">
+                    IUT de La Réunion<br />
+                    40 Avenue de Soweto<br />
+                    97410 Saint-Pierre,<br />
+                    La Réunion
+                  </p>
                 </div>
               </div>
+            </div>
+            <div className="mt-8">
+              <img
+                src="https://maps.googleapis.com/maps/api/staticmap?center=-21.341389,55.483333&zoom=16&size=400x300&maptype=satellite&markers=color:red%7C-21.341389,55.483333&key=YOUR_API_KEY"
+                alt="IUT de La Réunion - Vue satellite"
+                className="w-full rounded-lg shadow-lg"
+              />
             </div>
           </div>
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -78,6 +80,7 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                className="dark:bg-gray-800 dark:text-white"
               />
             </div>
             <div>
@@ -88,6 +91,7 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                className="dark:bg-gray-800 dark:text-white"
               />
             </div>
             <div>
@@ -97,6 +101,7 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
+                className="dark:bg-gray-800 dark:text-white"
               />
             </div>
             <div>
@@ -106,7 +111,7 @@ const Contact = () => {
                 value={formData.message}
                 onChange={handleChange}
                 required
-                className="min-h-[150px]"
+                className="min-h-[150px] dark:bg-gray-800 dark:text-white"
               />
             </div>
             <Button type="submit" className="w-full">
