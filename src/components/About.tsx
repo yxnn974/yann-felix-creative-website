@@ -16,7 +16,7 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
           À propos de moi
         </h2>
         <div className="flex flex-col md:flex-row items-start gap-12">
@@ -28,28 +28,27 @@ const About = () => {
             />
           </div>
           <div className="flex-1 space-y-6">
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Actuellement étudiant en BUT Réseaux et Télécommunications à l'IUT de La Réunion,
               je suis passionné par les nouvelles technologies et particulièrement intéressé
               par la gestion des réseaux et la cybersécurité.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Mon objectif est de me spécialiser dans ces domaines et d'obtenir des certifications
               reconnues comme CCNA et CCNP. Je suis constamment à la recherche de nouvelles
               opportunités d'apprentissage et de défis techniques.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               Je suis enthousiaste à l'idée de collaborer sur des projets innovants et d'échanger
               des idées avec d'autres passionnés du domaine.
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               N'hésitez pas à me contacter pour discuter de projets, d'opportunités ou simplement
               pour échanger sur nos passions communes dans le domaine des réseaux !
             </p>
 
             <div className="space-y-4 mt-8">
-              {/* Langues */}
-              <Collapsible className="border rounded-lg p-4 dark:border-gray-700">
+              <Collapsible className="border rounded-lg p-4 dark:border-gray-700 bg-white dark:bg-gray-800">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
                     <Globe className="h-5 w-5 dark:text-gray-300" />
@@ -74,7 +73,6 @@ const About = () => {
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Centres d'intérêts */}
               <Collapsible className="border rounded-lg p-4 dark:border-gray-700">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
@@ -124,7 +122,6 @@ const About = () => {
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Déplacements */}
               <Collapsible className="border rounded-lg p-4 dark:border-gray-700">
                 <CollapsibleTrigger className="flex items-center justify-between w-full">
                   <div className="flex items-center gap-2">
@@ -149,13 +146,13 @@ const About = () => {
             </div>
 
             <div className="space-y-4 pt-4">
-              <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+              <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
                 <span>Yann FELIX</span>
               </div>
-              <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+              <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
                 <span>yann.felix@example.com</span>
               </div>
-              <div className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
+              <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
                 <span>IUT de La Réunion</span>
               </div>
             </div>
@@ -163,7 +160,7 @@ const About = () => {
               <Button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}>
                 Me contacter
               </Button>
-              <Button variant="outline">
+              <Button variant="outline" className="dark:text-gray-300 dark:hover:text-white">
                 Télécharger mon CV
               </Button>
             </div>
