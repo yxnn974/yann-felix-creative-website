@@ -14,9 +14,9 @@ import { Globe, Activity, Mountain, Music, Film, Car, MapPin } from "lucide-reac
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
           À propos de moi
         </h2>
         <div className="flex flex-col md:flex-row items-start gap-12">

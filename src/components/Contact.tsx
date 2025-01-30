@@ -31,14 +31,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+    <section id="contact" className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-white">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-400 dark:to-teal-400">
           Contact
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-          <div className="space-y-6">
-            <h3 className="text-xl font-semibold mb-6 text-gray-900 dark:text-white">Contactez-moi</h3>
+          <div className="space-y-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-emerald-100 dark:border-emerald-900">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-primary">
@@ -72,7 +71,7 @@ const Contact = () => {
               />
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-teal-100 dark:border-teal-900">
             <div>
               <Input
                 placeholder="Votre nom"
