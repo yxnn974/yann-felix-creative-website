@@ -1,17 +1,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  darkMode: ["Je vais vous aider à implémenter ces changements. Je vois que le projet utilise déjà next-themes pour la gestion du mode sombre et possède un contexte de langue, donc nous allons nous appuyer sur ces bases existantes.
-
-<lov-code>
-Nous allons modifier plusieurs fichiers pour mettre en place ces changements :
-
-1. D'abord, mettons à jour le fichier tailwind.config.ts pour supprimer les couleurs personnalisées et utiliser les variables CSS par défaut :
-
-<lov-write file_path="tailwind.config.ts">
-import type { Config } from "tailwindcss";
-
-export default {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -68,25 +57,6 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-      },
-      keyframes: {
-        "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
-        },
-        fadeIn: {
-          "0%": { opacity: "0", transform: "translateY(20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        fadeIn: "fadeIn 0.5s ease-out forwards",
       },
     },
   },

@@ -32,6 +32,18 @@ const Index = () => {
       <Skills />
       <Projects />
       <Contact />
+      <div className="container mx-auto px-6 py-12 flex flex-col md:flex-row items-center justify-center gap-12">
+        <img
+          src="/lovable-uploads/c41845dc-caef-4e8f-9e72-c644b0d3f241.png"
+          alt="IUT de La Réunion"
+          className="max-w-[300px] h-auto"
+        />
+        <img
+          src="/lovable-uploads/1668b841-5164-4759-815b-1dff29b3892b.png"
+          alt="IUT Réseaux et Télécoms"
+          className="max-w-[300px] h-auto"
+        />
+      </div>
       <Footer />
     </div>
   );
