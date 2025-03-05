@@ -1,3 +1,4 @@
+
 import { GraduationCap, Calendar } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { getTranslation } from "@/utils/translations";
@@ -43,7 +44,7 @@ const Education = () => {
   return (
     <section id="education" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           {getTranslation(language, "education")}
         </h2>
         <div className="max-w-3xl mx-auto">

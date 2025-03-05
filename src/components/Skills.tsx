@@ -1,3 +1,4 @@
+
 import {
   Server,
   Terminal,
@@ -116,13 +117,13 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600 dark:from-cyan-400 dark:to-blue-400">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
           {getTranslation(language, "skills")}
         </h2>
         
         <div className="space-y-16">
           <div>
-            <h3 className="text-2xl font-semibold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-400 dark:to-blue-400">
+            <h3 className="text-2xl font-semibold mb-8">
               {getTranslation(language, "technicalSkills")}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -152,7 +153,7 @@ const Skills = () => {
           </div>
 
           <div>
-            <h3 className="text-2xl font-semibold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-500 dark:from-cyan-400 dark:to-blue-400">
+            <h3 className="text-2xl font-semibold mb-8">
               {getTranslation(language, "softSkills")}
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

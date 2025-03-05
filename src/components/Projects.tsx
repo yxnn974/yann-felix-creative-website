@@ -1,3 +1,4 @@
+
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -120,7 +121,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-900">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-black">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
           {getTranslation(language, "projects")}
         </h2>
         <Tabs defaultValue="all" className="w-full">
