@@ -1,8 +1,8 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 
 const Navbar = () => {
@@ -33,7 +33,6 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
             <span className="text-xl font-bold text-primary dark:text-white">Yann FELIX</span>
-            <ThemeToggle />
             <LanguageToggle />
           </div>
           
