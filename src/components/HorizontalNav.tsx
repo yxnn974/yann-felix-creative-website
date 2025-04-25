@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getTranslation } from "@/utils/translations";
 import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 
@@ -17,12 +15,12 @@ const HorizontalNav = () => {
   const [sections, setSections] = useState<HTMLElement[]>([]);
 
   const navItems: NavItem[] = [
-    { id: "hero", label: "Home" },
-    { id: "about", label: getTranslation(language, "about") },
-    { id: "education", label: getTranslation(language, "education") },
-    { id: "skills", label: getTranslation(language, "skills") },
-    { id: "projects", label: getTranslation(language, "projects") },
-    { id: "contact", label: getTranslation(language, "contact") },
+    { id: "hero", label: language === 'fr' ? 'Accueil' : 'Home' },
+    { id: "about", label: language === 'fr' ? 'À propos' : 'About' },
+    { id: "education", label: language === 'fr' ? 'Formation' : 'Education' },
+    { id: "skills", label: language === 'fr' ? 'Compétences' : 'Skills' },
+    { id: "projects", label: language === 'fr' ? 'Projets' : 'Projects' },
+    { id: "contact", label: language === 'fr' ? 'Contact' : 'Contact' },
   ];
 
   useEffect(() => {

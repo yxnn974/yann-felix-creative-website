@@ -1,8 +1,6 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Gitlab, Twitter, Linkedin, Download } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getTranslation } from "@/utils/translations";
 
 const Hero = () => {
   const { language } = useLanguage();
@@ -13,13 +11,13 @@ const Hero = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center md:text-left max-w-2xl animate-fade-in">
             <p className="uppercase tracking-wider text-primary mb-2">
-              {getTranslation(language, "welcome")}
+              {language === 'fr' ? 'Bienvenue' : 'Welcome'}
             </p>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="gradient-text font-playfair">Yann FELIX</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-8">
-              {getTranslation(language, "subtitle")}
+              {language === 'fr' ? 'Je suis un ingénieur réseau et sécurité réseau' : 'I am a network and security engineer'}
             </p>
             
             <div className="flex flex-col md:flex-row gap-4 md:items-center mb-8">
