@@ -34,11 +34,13 @@
     @apply border-border;
     scroll-behavior: smooth;
   }
+  
   body {
     @apply bg-background text-foreground font-poppins;
     scrollbar-width: none;
     padding-top: 64px; /* Height of the navbar */
     padding-bottom: 40px; /* Height of the footer */
+    overflow-x: hidden;
   }
 
   body::-webkit-scrollbar {
@@ -53,6 +55,7 @@
 .horizontal-snap {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .horizontal-snap > section {
@@ -64,7 +67,7 @@
 }
 
 .gradient-button {
-  @apply bg-gradient-to-r from-primary to-accent text-white font-medium py-2 px-6 rounded-full transition-transform hover:scale-105;
+  @apply bg-gradient-to-r from-primary to-accent text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 active:scale-95;
 }
 
 .section-slide {
@@ -73,6 +76,9 @@
   scroll-snap-align: start;
   scroll-snap-stop: always;
   padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .progress-ring {
