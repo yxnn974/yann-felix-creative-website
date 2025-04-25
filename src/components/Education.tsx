@@ -42,40 +42,52 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-          {getTranslation(language, "education")}
-        </h2>
-        <div className="max-w-3xl mx-auto">
-          {educationData[language].map((item, index) => (
-            <div
-              key={index}
-              className="relative pl-8 pb-12 last:pb-0 hover:transform hover:scale-105 transition-all duration-300"
-            >
-              <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-purple-400 to-pink-400 dark:from-purple-500 dark:to-pink-500">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-4 h-4 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 dark:from-purple-500 dark:to-pink-500"></div>
-                </div>
-              </div>
-              
-              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 ml-8 border border-purple-100 dark:border-purple-900">
-                <div className="flex items-center gap-2 text-primary mb-2">
-                  <Calendar size={20} />
-                  <span className="text-white">{item.period}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-2 text-white">{item.title}</h3>
-                <div className="flex items-center gap-2 text-gray-300 mb-4">
-                  <GraduationCap size={20} />
-                  <span>{item.institution}</span>
-                </div>
-                <p className="text-gray-300">{item.description}</p>
+    <div className="min-h-screen w-screen flex items-center">
+      <div className="container mx-auto px-6 py-20">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 gradient-text">
+            {getTranslation(language, "education")}
+          </h2>
+          
+          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent mb-12"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/c41845dc-caef-4e8f-9e72-c644b0d3f241.png" 
+                alt="IUT de La Réunion"
+                className="rounded-lg shadow-lg w-full object-cover h-64"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+              <div className="absolute bottom-4 left-4">
+                <p className="font-medium text-lg text-white">IUT de La Réunion</p>
+                <p className="text-sm text-white/70">Saint-Pierre, La Réunion</p>
               </div>
             </div>
-          ))}
+            
+            <div className="space-y-8">
+              {educationData[language].map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-card rounded-lg p-6 border border-border hover:border-accent/50 transition-all duration-300"
+                >
+                  <div className="flex items-center gap-2 text-primary mb-2">
+                    <Calendar size={18} />
+                    <span>{item.period}</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                  <div className="flex items-center gap-2 text-muted-foreground mb-4">
+                    <GraduationCap size={18} />
+                    <span>{item.institution}</span>
+                  </div>
+                  <p className="text-muted-foreground">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

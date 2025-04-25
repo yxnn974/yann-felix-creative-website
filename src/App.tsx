@@ -1,18 +1,19 @@
+
 import { ThemeProvider } from "next-themes";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./contexts/LanguageContext";
+import { Toaster } from "./components/ui/toaster";
 import Index from "./pages/Index";
 
 function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       <LanguageProvider>
         <Router>
-          <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-            <Routes>
-              <Route path="/" element={<Index />} />
-            </Routes>
-          </div>
+          <Routes>
+            <Route path="/" element={<Index />} />
+          </Routes>
+          <Toaster />
         </Router>
       </LanguageProvider>
     </ThemeProvider>
