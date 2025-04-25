@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -69,7 +68,7 @@ const HorizontalNav = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 bg-background/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="flex items-center justify-between">
         <a href="#hero" className="text-2xl font-playfair italic font-bold gradient-text">
           Felix Yann

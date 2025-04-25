@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Download } from "lucide-react";
@@ -37,7 +36,7 @@ const About = () => {
                       <span>B2</span>
                     </li>
                     <li className="flex justify-between">
-                      <span>Espagnol</span>
+                      <span>Español</span>
                       <span>B1</span>
                     </li>
                   </ul>
@@ -48,10 +47,6 @@ const About = () => {
                   <ul className="mt-2 space-y-1 text-sm">
                     <li className="flex justify-between">
                       <span>Permis B</span>
-                      <span>✓</span>
-                    </li>
-                    <li className="flex justify-between">
-                      <span>Véhicule</span>
                       <span>✓</span>
                     </li>
                   </ul>
@@ -85,8 +80,9 @@ const About = () => {
                 <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Basketball</div>
                 <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Randonnée</div>
                 <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Musique</div>
-                <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Cinéma</div>
                 <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Technologie</div>
+                <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Voyage</div>
+                <div className="px-3 py-1 text-sm rounded-full bg-muted text-muted-foreground">Sport automobile</div>
               </div>
               
               <div className="flex flex-wrap gap-4 pt-4">
