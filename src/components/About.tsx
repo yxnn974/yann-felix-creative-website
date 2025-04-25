@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { 
@@ -5,7 +6,7 @@ import {
   Download, 
   Languages, 
   Car, 
-  Basketball, 
+  Activity, 
   Mountain, 
   Music, 
   Laptop, 
@@ -71,12 +72,12 @@ const About = () => {
 
                 <div className="bg-card rounded-lg p-4 border border-border hover:border-secondary transition-colors group">
                   <div className="flex items-center gap-2 mb-3">
-                    <Basketball className="text-secondary group-hover:scale-110 transition-transform" size={20} />
+                    <Activity className="text-secondary group-hover:scale-110 transition-transform" size={20} />
                     <h3 className="font-semibold text-secondary">{language === 'fr' ? 'Intérêts' : 'Interests'}</h3>
                   </div>
                   <div className="flex flex-wrap gap-2">
                     <div className="flex items-center gap-1 px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors">
-                      <Basketball size={12} />
+                      <Activity size={12} />
                       <span>Basketball</span>
                     </div>
                     <div className="flex items-center gap-1 px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground hover:bg-muted/80 transition-colors">
