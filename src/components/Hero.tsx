@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Github, Gitlab, Twitter, Linkedin, Download } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -17,7 +18,9 @@ const Hero = () => {
               <span className="gradient-text font-playfair">Yann FELIX</span>
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-8">
-              {language === 'fr' ? 'Je suis un ingénieur réseau et sécurité réseau' : 'I am a network and security engineer'}
+              {language === 'fr' 
+                ? 'Étudiant en réseaux et télécommunications' 
+                : 'Student in networks and telecommunications'}
             </p>
             
             <div className="flex flex-col md:flex-row gap-4 md:items-center mb-8">

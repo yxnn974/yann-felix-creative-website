@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 
 function App() {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <LanguageProvider>
         <Router>
           <Routes>

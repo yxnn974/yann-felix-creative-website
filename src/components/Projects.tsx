@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { getTranslation } from "@/utils/translations";
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("all");
@@ -82,7 +81,7 @@ const Projects = () => {
       {projectList.map((project, index) => (
         <div
           key={index}
-          className="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
+          className="bg-card rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-border hover:border-primary/50"
         >
           <img
             src={project.image}
@@ -90,26 +89,26 @@ const Projects = () => {
             className="w-full h-48 object-cover"
           />
           <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
-            <p className="text-gray-300 mb-4">{project.description}</p>
+            <h3 className="text-xl font-semibold mb-2 text-foreground">{project.title}</h3>
+            <p className="text-foreground/70 mb-4">{project.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.tags.map((tag, tagIndex) => (
                 <span
                   key={tagIndex}
-                  className="bg-blue-900 text-primary px-3 py-1 rounded-full text-sm"
+                  className="bg-muted text-muted-foreground px-3 py-1 rounded-full text-xs"
                 >
                   {tag}
                 </span>
               ))}
             </div>
             <div className="flex gap-4">
-              <Button variant="outline" size="sm" className="gap-2 text-white">
+              <Button variant="outline" size="sm" className="gap-2">
                 <Github size={16} />
-                {getTranslation(language, "code")}
+                {language === 'fr' ? 'Code' : 'Code'}
               </Button>
-              <Button variant="outline" size="sm" className="gap-2 text-white">
+              <Button variant="outline" size="sm" className="gap-2">
                 <ExternalLink size={16} />
-                {getTranslation(language, "demo")}
+                {language === 'fr' ? 'Démo' : 'Demo'}
               </Button>
             </div>
           </div>
@@ -119,37 +118,50 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-          {getTranslation(language, "projects")}
-        </h2>
-        <Tabs defaultValue="all" className="w-full">
-          <TabsList className="flex justify-center mb-8">
-            <TabsTrigger value="all" className="text-white">{getTranslation(language, "all")}</TabsTrigger>
-            <TabsTrigger value="academic" className="text-white">{getTranslation(language, "academic")}</TabsTrigger>
-            <TabsTrigger value="professional" className="text-white">{getTranslation(language, "professional")}</TabsTrigger>
-            <TabsTrigger value="personal" className="text-white">{getTranslation(language, "personal")}</TabsTrigger>
-          </TabsList>
-          <TabsContent value="all">
-            {renderProjects([
-              ...projects[language].academic,
-              ...projects[language].professional,
-              ...projects[language].personal,
-            ])}
-          </TabsContent>
-          <TabsContent value="academic">
-            {renderProjects(projects[language].academic)}
-          </TabsContent>
-          <TabsContent value="professional">
-            {renderProjects(projects[language].professional)}
-          </TabsContent>
-          <TabsContent value="personal">
-            {renderProjects(projects[language].personal)}
-          </TabsContent>
-        </Tabs>
+    <div className="min-h-screen w-screen flex items-center">
+      <div className="container mx-auto px-6 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4 text-center gradient-text">
+            {language === 'fr' ? 'Mes Projets' : 'My Projects'}
+          </h2>
+          
+          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent mb-12 mx-auto"></div>
+          
+          <Tabs defaultValue="all" className="w-full">
+            <TabsList className="flex justify-center mb-8">
+              <TabsTrigger value="all">
+                {language === 'fr' ? 'Tous' : 'All'}
+              </TabsTrigger>
+              <TabsTrigger value="academic">
+                {language === 'fr' ? 'Académiques' : 'Academic'}
+              </TabsTrigger>
+              <TabsTrigger value="professional">
+                {language === 'fr' ? 'Professionnels' : 'Professional'}
+              </TabsTrigger>
+              <TabsTrigger value="personal">
+                {language === 'fr' ? 'Personnels' : 'Personal'}
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="all">
+              {renderProjects([
+                ...projects[language].academic,
+                ...projects[language].professional,
+                ...projects[language].personal,
+              ])}
+            </TabsContent>
+            <TabsContent value="academic">
+              {renderProjects(projects[language].academic)}
+            </TabsContent>
+            <TabsContent value="professional">
+              {renderProjects(projects[language].professional)}
+            </TabsContent>
+            <TabsContent value="personal">
+              {renderProjects(projects[language].personal)}
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

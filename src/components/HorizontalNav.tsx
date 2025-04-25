@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ThemeToggle } from "./ThemeToggle";
 import { LanguageToggle } from "./LanguageToggle";
 
 interface NavItem {
@@ -92,7 +92,6 @@ const HorizontalNav = () => {
         </div>
         
         <div className="flex items-center gap-4">
-          <ThemeToggle />
           <LanguageToggle />
           
           <div className="flex items-center gap-2">
