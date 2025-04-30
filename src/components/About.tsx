@@ -56,15 +56,15 @@ const About = () => {
           <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent mb-6 sm:mb-8 mx-auto"></div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <div className={`space-y-5 ${textRevealClass(200)}`}>
+            <div className={`space-y-4 ${textRevealClass(200)}`}>
               <img
                 src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
                 alt="Profile"
-                className="rounded-lg shadow-lg w-full h-auto object-cover hover-card"
+                className="rounded-lg shadow-lg w-full h-auto object-cover hover-card interactive-element"
               />
               
-              <div className="grid grid-cols-3 gap-3">
-                <div className="bg-card rounded-lg p-3 border border-border hover:border-primary transition-colors hover-card group">
+              <div className="grid grid-cols-3 gap-2">
+                <div className="content-card p-3 border border-border hover:border-primary transition-colors hover-card group interactive-element">
                   <div className="flex items-center gap-2 mb-2">
                     <Languages className="text-primary group-hover:scale-110 transition-transform" size={18} />
                     <h3 className="font-semibold text-primary">{language === 'fr' ? 'Langues' : 'Languages'}</h3>
@@ -85,7 +85,7 @@ const About = () => {
                   </ul>
                 </div>
                 
-                <div className="bg-card rounded-lg p-3 border border-border hover:border-accent transition-colors hover-card group">
+                <div className="content-card p-3 border border-border hover:border-accent transition-colors hover-card group interactive-element">
                   <div className="flex items-center gap-2 mb-2">
                     <Car className="text-accent group-hover:scale-110 transition-transform" size={18} />
                     <h3 className="font-semibold text-accent">{language === 'fr' ? 'Mobilité' : 'Mobility'}</h3>
@@ -98,34 +98,34 @@ const About = () => {
                   </ul>
                 </div>
 
-                <div className="bg-card rounded-lg p-3 border border-border hover:border-secondary transition-colors hover-card group">
+                <div className="content-card p-3 border border-border hover:border-secondary transition-colors hover-card group interactive-element">
                   <div className="flex items-center gap-2 mb-2">
                     <Activity className="text-secondary group-hover:scale-110 transition-transform" size={18} />
                     <h3 className="font-semibold text-secondary">{language === 'fr' ? 'Intérêts' : 'Interests'}</h3>
                   </div>
-                  <div className="grid grid-cols-2 gap-1">
+                  <div className="grid grid-cols-3 gap-1">
                     <div className="interest-tag">
-                      <Activity size={11} />
+                      <Activity size={10} />
                       <span>Sport</span>
                     </div>
                     <div className="interest-tag">
-                      <Mountain size={11} />
+                      <Mountain size={10} />
                       <span>{language === 'fr' ? 'Rando' : 'Hiking'}</span>
                     </div>
                     <div className="interest-tag">
-                      <Music size={11} />
+                      <Music size={10} />
                       <span>Music</span>
                     </div>
                     <div className="interest-tag">
-                      <Laptop size={11} />
+                      <Laptop size={10} />
                       <span>Tech</span>
                     </div>
                     <div className="interest-tag">
-                      <Plane size={11} />
+                      <Plane size={10} />
                       <span>Voyage</span>
                     </div>
                     <div className="interest-tag">
-                      <CarFront size={11} />
+                      <CarFront size={10} />
                       <span>Auto</span>
                     </div>
                   </div>
@@ -134,7 +134,7 @@ const About = () => {
             </div>
             
             <div className={`space-y-5 ${textRevealClass(300)}`}>
-              <div className="space-y-4 text-foreground/90">
+              <div className="content-card p-5 space-y-4 text-foreground/90">
                 <p className="mb-2">
                   Actuellement étudiant en BUT Réseaux et Télécommunications à l'IUT de La Réunion,
                   je suis passionné par les nouvelles technologies et particulièrement intéressé
@@ -152,14 +152,14 @@ const About = () => {
               </div>
               
               <div className="flex flex-wrap gap-4 pt-2">
-                <Button className="nav-button group">
+                <Button className="nav-button group focus-visible-outline interactive-element">
                   <Download size={18} className="mr-2 group-hover:scale-110 transition-transform" />
                   {language === "fr" ? "Télécharger CV" : "Download CV"}
                 </Button>
                 <Button 
                   variant="outline" 
                   onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth", inline: "start" })}
-                  className="hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500 group"
+                  className="hover:bg-blue-500/10 hover:text-blue-300 hover:border-blue-500 group focus-visible-outline interactive-element"
                 >
                   <Mail size={18} className="mr-2 group-hover:scale-110 transition-transform" />
                   {language === "fr" ? "Me contacter" : "Contact me"}

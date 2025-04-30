@@ -27,6 +27,7 @@
     --input: 0 0% 20%;
     --ring: 142 71% 45%;
     --radius: 0.5rem;
+    --section-bg-alt: 0 0% 11%;
   }
 }
 
@@ -94,6 +95,27 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  position: relative;
+}
+
+/* Add alternating section backgrounds for better distinction */
+.section-slide:nth-child(even) {
+  background-color: hsl(var(--background));
+}
+
+.section-slide:nth-child(odd) {
+  background-color: hsl(var(--section-bg-alt));
+}
+
+/* Add section dividers */
+.section-slide::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsl(var(--border)), transparent);
 }
 
 .progress-ring {
@@ -128,6 +150,7 @@
   @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/10;
 }
 
+/* Enhanced animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -161,6 +184,33 @@
   }
 }
 
+/* New button pulse animation */
+.btn-pulse {
+  animation: btnPulse 2s infinite;
+}
+
+@keyframes btnPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* Accessibility improvements */
+.focus-visible-outline:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500;
+}
+
+/* Improve section transitions */
+.section-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
 /* Add responsive adjustments */
 @media (max-width: 768px) {
   .section-slide {
@@ -171,4 +221,20 @@
   .container {
     padding: 1rem;
   }
+}
+
+/* Improved card styles for better section distinction */
+.content-card {
+  @apply bg-card border border-border rounded-lg shadow-md transition-all duration-300
+  hover:border-blue-500/30 hover:shadow-lg hover:shadow-blue-500/10;
+}
+
+/* Enhanced interactive elements */
+.interactive-element {
+  @apply transition-all duration-200 hover:scale-[1.03] active:scale-[0.98] focus:outline-none focus-visible:outline-blue-500;
+}
+
+/* Better focus indicators for accessibility */
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-500 ring-2 ring-blue-500/50;
 }
