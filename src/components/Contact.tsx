@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import { MapPin, Mail, Phone, Send } from "lucide-react";
+import { MapPin, Mail, Send } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
@@ -43,10 +43,10 @@ const Contact = () => {
             {language === 'fr' ? 'Contact' : 'Contact'}
           </h2>
           
-          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent mb-12 mx-auto"></div>
+          <div className="h-1 w-20 bg-gradient-to-r from-primary to-accent mb-8 mx-auto"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-8 animate-fade-in">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6 animate-fade-in">
               <div className="bg-card rounded-lg p-6 border border-border hover:border-accent/50 transition-all duration-300">
                 <h3 className="text-xl font-semibold mb-6 text-primary">
                   {language === 'fr' ? 'Informations de contact' : 'Contact Information'}
@@ -83,20 +83,6 @@ const Contact = () => {
                       </p>
                     </div>
                   </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="bg-primary/10 w-10 h-10 rounded-full flex items-center justify-center shrink-0 text-primary">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-foreground mb-1">
-                        {language === 'fr' ? 'Téléphone' : 'Phone'}
-                      </h4>
-                      <p className="text-foreground/80">
-                        +262 6XX XXX XXX
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
               
@@ -113,8 +99,8 @@ const Contact = () => {
               </div>
             </div>
             
-            <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in delay-200 bg-card rounded-lg p-8 border border-border hover:border-primary/50 transition-all duration-300">
-              <h3 className="text-xl font-semibold mb-6 text-accent">
+            <form onSubmit={handleSubmit} className="space-y-5 animate-fade-in delay-200 bg-card rounded-lg p-6 border border-border hover:border-primary/50 transition-all duration-300">
+              <h3 className="text-xl font-semibold mb-4 text-accent">
                 {language === 'fr' ? 'Envoyez-moi un message' : 'Send me a message'}
               </h3>
               
