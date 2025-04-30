@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -68,21 +69,21 @@ const HorizontalNav = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="flex items-center justify-between">
         <a href="#hero" className="text-2xl font-playfair italic font-bold gradient-text">
           Felix Yann
         </a>
         
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-4">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className={`text-sm transition-all duration-300 ${
+              className={`text-sm transition-all duration-300 py-1 px-4 rounded-full ${
                 activeSection === item.id
-                  ? "text-primary font-medium"
-                  : "text-foreground/70 hover:text-foreground"
+                  ? "bg-blue-500 text-white font-medium shadow-md shadow-blue-500/20"
+                  : "text-foreground/70 hover:text-blue-300 hover:bg-blue-500/10"
               }`}
             >
               {item.label}
@@ -96,20 +97,37 @@ const HorizontalNav = () => {
           <div className="flex items-center gap-2">
             <button 
               onClick={scrollPrev}
-              className="p-2 rounded-full border border-border hover:bg-muted transition-colors"
+              className="p-2 rounded-full border border-border hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors"
               aria-label="Previous section"
             >
               <ChevronLeft size={16} />
             </button>
             <button 
               onClick={scrollNext}
-              className="p-2 rounded-full border border-border hover:bg-muted transition-colors"
+              className="p-2 rounded-full border border-border hover:bg-blue-500 hover:border-blue-500 hover:text-white transition-colors"
               aria-label="Next section"
             >
               <ChevronRight size={16} />
             </button>
           </div>
         </div>
+      </div>
+      
+      {/* Mobile Navigation */}
+      <div className="md:hidden mt-4 overflow-x-auto flex space-x-2 pb-2 scrollbar-none">
+        {navItems.map((item) => (
+          <button
+            key={item.id}
+            onClick={() => scrollToSection(item.id)}
+            className={`whitespace-nowrap text-xs transition-all duration-300 py-1 px-3 rounded-full ${
+              activeSection === item.id
+                ? "bg-blue-500 text-white font-medium shadow-md shadow-blue-500/20"
+                : "text-foreground/70 hover:text-blue-300 hover:bg-blue-500/10"
+            }`}
+          >
+            {item.label}
+          </button>
+        ))}
       </div>
     </nav>
   );

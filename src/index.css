@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -56,18 +57,31 @@
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-snap::-webkit-scrollbar {
+  display: none;
 }
 
 .horizontal-snap > section {
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .gradient-text {
   @apply bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent;
 }
 
+.nav-button {
+  @apply text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-full transition-all duration-300 
+  transform hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30 active:scale-95;
+}
+
 .gradient-button {
-  @apply bg-gradient-to-r from-primary to-accent text-white font-medium py-2 px-6 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 active:scale-95;
+  @apply bg-gradient-to-r from-primary to-accent text-white font-medium py-2 px-6 rounded-full 
+  transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-accent/20 active:scale-95;
 }
 
 .section-slide {
@@ -79,6 +93,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .progress-ring {
@@ -97,6 +112,20 @@
 
 .animate-slide-in {
   animation: slideIn 0.6s ease-out forwards;
+}
+
+.animate-text-reveal {
+  animation: textReveal 1s ease-out forwards;
+  opacity: 0;
+}
+
+.interest-tag {
+  @apply flex items-center gap-1 px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground 
+  hover:bg-blue-500/20 hover:text-blue-300 transition-all duration-300 transform hover:scale-105;
+}
+
+.hover-card {
+  @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-blue-500/10;
 }
 
 @keyframes fadeIn {
@@ -120,3 +149,27 @@
     transform: translateX(0);
   }
 }
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .section-slide {
+    padding: 1rem;
+    min-height: calc(100vh - 84px);
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+}
+
