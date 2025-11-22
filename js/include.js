@@ -88,6 +88,153 @@ function setupTypingEffect() {
     const delay = deleting ? 50 : 90;
     setTimeout(type, delay);
   }
+// include.js
+// 1) Charge les fragments HTML (header, sections, footer)
+// 2) Gère le mode clair / sombre
+// 3) Active les animations .fade-in-up
+// 4) Active l'effet "typing" dans le hero
+
+/* -----------------------------------
+   1. Thème clair / sombre
+----------------------------------- */
+
+function setupThemeFromStorage() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "light") {
+    document.body.classList.add("light-theme");
+  }
+}
+
+function setupThemeToggle() {
+  document.addEventListener("click", (event) => {
+    const toggleBtn = event.target.closest("#theme-toggle");
+    if (!toggleBtn) return;
+
+    document.body.classList.toggle("light-theme");
+    const isLight = document.body.classList.contains("light-theme");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
+  });
+}
+
+/* -----------------------------------
+   2. Animation fade-in-up
+----------------------------------- */
+
+function setupFadeInAnimations() {
+  const elements = document.querySelectorAll(".fade-in-up");
+
+  if (!elements.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+}
+
+/* -----------------------------------
+   3. Typing effect
+----------------------------------- */
+
+function setupTypingEffect() {
+  const typingEl = document.getElementById("typing");
+  if (!typingEl) return;
+
+  const words = [
+    "les réseaux",
+    "les télécommunications",
+    "la cybersécurité",
+    "Linux",
+  ];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  function type() {
+    const current = words[wordIndex];
+
+    if (!deleting) {
+      charIndex++;
+      if (charIndex >= current.length) {
+        deleting = true;
+        typingEl.textContent = current;
+        return setTimeout(type, 1400);
+      }
+    } else {
+      charIndex--;
+      if (charIndex <= 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    typingEl.textContent = current.slice(0, charIndex);
+    const delay = deleting ? 50 : 90;
+    setTimeout(type, delay);
+  }
+
+  type();
+}
+
+/* -----------------------------------
+   4. Loader de fragments HTML
+----------------------------------- */
+
+function loadIncludes() {
+  const includeElems = document.querySelectorAll("[data-include]");
+  const promises = [];
+
+  includeElems.forEach((elem) => {
+    const file = elem.getAttribute("data-include");
+
+    const p = fetch(file)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Erreur de chargement : ${file}`);
+        }
+        return response.text();
+      })
+      .then((html) => {
+        elem.innerHTML = html;
+      })
+      .catch((err) => {
+        elem.innerHTML = `<p style="color:red;">${err.message}</p>`;
+      });
+
+    promises.push(p);
+  });
+
+  Promise.all(promises).then(() => {
+    setupFadeInAnimations();
+    setupTypingEffect();
+  });
+}
+
+/* -----------------------------------
+   5. Lancement
+----------------------------------- */
+
+// Applique le thème immédiatement pour éviter le flash
+setupThemeFromStorage();
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupThemeToggle();
+  loadIncludes();
+});
 
   type();
 }
