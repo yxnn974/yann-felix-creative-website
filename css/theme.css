@@ -1,0 +1,67 @@
+/* =========================================
+   Thème clair / sombre
+   ========================================= */
+
+/* Thème par défaut = sombre (défini par :root + body) */
+
+/* Thème clair : on override certaines couleurs quand body a la classe .light-theme */
+
+body.light-theme {
+  --bg: #f4f4f5;
+  --bg-alt: #ffffff;
+  --text: #020617;
+  --text-muted: #4b5563;
+  --primary: #2563eb;
+  --accent: #16a34a;
+  --border: #d4d4d8;
+  --card-bg: #ffffff;
+  background: #f4f4f5;
+  color: var(--text);
+}
+
+/* Header en clair */
+
+body.light-theme .site-header {
+  background: rgba(250, 250, 251, 0.9);
+  border-bottom-color: rgba(209, 213, 219, 0.8);
+}
+
+/* Cartes en clair */
+
+body.light-theme .card,
+body.light-theme .project-card,
+body.light-theme .skill-card {
+  background-color: #ffffff;
+  border-color: rgba(209, 213, 219, 0.9);
+  box-shadow: 0 10px 24px rgba(148, 163, 184, 0.4);
+}
+
+/* Footer en clair */
+
+body.light-theme .site-footer {
+  background-color: #e5e7eb;
+  border-top-color: #d4d4d8;
+  color: #111827;
+}
+
+/* Formulaire et inputs */
+
+body.light-theme input,
+body.light-theme textarea {
+  background-color: #ffffff;
+  border-color: #d4d4d8;
+  color: #111827;
+}
+
+/* Bouton thème en clair */
+
+body.light-theme .theme-toggle {
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* Liens de navigation */
+
+body.light-theme .main-nav a {
+  color: #4b5563;
+}
