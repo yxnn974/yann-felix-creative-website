@@ -1,18 +1,199 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>creative-connect-portfolio</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
-  </head>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio Yann Félix</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./portfolio.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="logo">Yann FELIX</div>
+      <nav class="main-nav">
+        <a href="#hero">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <main>
+    <!-- SECTION HERO -->
+    <section id="hero" class="section hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="hero-badge">Bienvenue</p>
+          <h1 class="hero-title">
+            <span class="gradient-text">Yann FELIX</span>
+          </h1>
+          <p class="hero-subtitle">
+            Étudiant en Réseaux & Télécommunications à l'IUT de La Réunion.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Télécharger mon CV</a>
+            <a href="#contact" class="btn btn-outline">Me contacter</a>
+          </div>
+
+          <div class="tags">
+            <span class="tag">TCP/IP</span>
+            <span class="tag">Network Security</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Python</span>
+            <span class="tag">VoIP</span>
+          </div>
+        </div>
+
+        <div class="hero-image-card">
+          <div class="hero-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31"
+                 alt="Data Center" />
+          </div>
+          <div class="hero-image-caption">
+            <p class="caption-title">IUT de La Réunion</p>
+            <p class="caption-subtitle">Réseaux & Télécommunications</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION A PROPOS -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title gradient-text">À propos de moi</h2>
+        <div class="section-divider"></div>
+
+        <div class="about-grid">
+          <div class="about-left">
+            <img class="about-image"
+             src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" />
+
+            <div class="about-cards">
+              <div class="card small-card">
+                <h3>Langues</h3>
+                <ul>
+                  <li>Français — natif</li>
+                  <li>Anglais — B2</li>
+                  <li>Espagnol — B1</li>
+                </ul>
+              </div>
+
+              <div class="card small-card">
+                <h3>Mobilité</h3>
+                <p>Permis B</p>
+              </div>
+
+              <div class="card small-card">
+                <h3>Intérêts</h3>
+                <div class="tags">
+                  <span class="tag">Tech</span>
+                  <span class="tag">Sport</span>
+                  <span class="tag">Rando</span>
+                  <span class="tag">Automobile</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-right">
+            <div class="card">
+              <p>
+                Je suis étudiant en BUT Réseaux et Télécommunications à l’IUT de La Réunion,
+                passionné par les technologies réseau et la cybersécurité.
+              </p>
+              <p>
+                Je souhaite obtenir les certifications Cisco (CCNA/CCNP) et progresser dans l’admin système.
+              </p>
+              <p>
+                Je suis motivé à apprendre, évoluer et relever des défis techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION FORMATION -->
+    <section id="education" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title gradient-text">Formation</h2>
+        <div class="section-divider"></div>
+
+        <div class="education-grid">
+          <div class="education-left">
+            <div class="card image-card">
+              <img src="https://iutrun.fr/wp-content/uploads/2021/04/logo_iut_blanc.png"
+                   alt="IUT Réunion" />
+              <div class="image-card-overlay">
+                <p class="caption-title">IUT de La Réunion</p>
+                <p class="caption-subtitle">Saint-Pierre, La Réunion</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-right">
+            <div class="card">
+              <h3>BUT Réseaux & Télécoms — 2024-2027</h3>
+              <p class="edu-school">IUT de La Réunion</p>
+              <p>
+                Protocoles réseau, sécurité, téléphonie, systèmes Linux, télécoms.
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>Baccalauréat Scientifique — 2024</h3>
+              <p class="edu-school">Lycée Roland Garros</p>
+              <p>Mention — Spé Maths & Sciences de l’ingénieur</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title gradient-text">Contact</h2>
+        <div class="section-divider"></div>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>Infos</h3>
+            <p>
+              IUT de La Réunion<br />
+              Saint-Pierre
+            </p>
+            <p class="contact-email">
+              Email : <a href="mailto:contact@yannfelix.com">contact@yannfelix.com</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>M’écrire</h3>
+            <form>
+              <label>Nom <input type="text" /></label>
+              <label>Email <input type="email" /></label>
+              <label>Message <textarea></textarea></label>
+
+              <button class="btn btn-primary full-width">Envoyer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      &copy; <span id="year"></span> Yann FELIX.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
