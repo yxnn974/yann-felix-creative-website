@@ -10,6 +10,7 @@
   justify-content: center;
   overflow: hidden;
   color: var(--text);
+  background-color: #020617; /* fallback si l'image ne charge pas */
 }
 
 /* Fond image */
@@ -25,7 +26,6 @@
   height: 100%;
   object-fit: cover;
 
-  /* ⚠️ plus de flou ici */
   /* image nette mais légèrement assombrie pour le texte */
   filter: brightness(0.75);
 
@@ -53,7 +53,11 @@
   position: relative;
   text-align: center;
   padding: 4rem 1.5rem;
+  max-width: 720px;          /* largeur max pour une meilleure lisibilité */
+  margin: 0 auto;
 }
+
+/* Petit badge au-dessus du nom */
 
 .hero-badge {
   text-transform: uppercase;
@@ -62,6 +66,8 @@
   color: #60a5fa;
   margin-bottom: 0.7rem;
 }
+
+/* Titres et textes principaux */
 
 .hero-title {
   font-family: "Playfair Display", serif;
@@ -79,6 +85,14 @@
   font-size: 0.95rem;
   color: var(--text-muted);
   margin-bottom: 1.8rem;
+}
+
+/* Améliore la lisibilité sur l'image de fond */
+.hero-title,
+.hero-subtitle,
+.hero-tagline,
+.hero-badge {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.8);
 }
 
 /* Centrage des éléments */
@@ -105,6 +119,41 @@
 
 /* Responsive */
 
+.scroll-indicator {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.scroll-indicator-arrow {
+  width: 22px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 6px;
+  opacity: 0.85;
+}
+
+.scroll-indicator-arrow::before {
+  content: "▾";
+  font-size: 0.9rem;
+  color: rgba(148, 163, 184, 0.9);
+  animation: scrollBounce 1.4s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(6px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.4; }
+}
+
 @media (max-width: 900px) {
   .hero-landing {
     min-height: 80vh;
@@ -113,4 +162,15 @@
   .hero-content {
     padding: 3rem 1.5rem 4rem;
   }
+}
+
+.hero-typing {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.hero-typing #typing {
+  font-weight: 600;
+  color: #60a5fa;
 }

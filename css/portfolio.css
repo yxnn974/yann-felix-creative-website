@@ -8,3 +8,72 @@
 @import "./animations.css";
 @import "./responsive.css";
 @import "./theme.css";
+
+.btn-primary {
+  background: linear-gradient(to right, #3b82f6, #22c55e);
+  color: #0b1020;
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(59, 130, 246, 0.55);
+}
+
+.about-short {
+  padding-top: 3rem;
+}
+
+.about-short-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
+  gap: 2rem;
+}
+
+.about-short-items {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .about-short-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-short-items {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: var(--text-muted);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.1s ease,
+    border-color 0.2s ease;
+}
+
+.tag:hover {
+  border-color: #3b82f6;
+  color: #e5e7eb;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+  transform: translateY(-1px);
+}
+
+body {
+  opacity: 0;
+  animation: siteFadeIn 0.8s ease forwards;
+}
+
+@keyframes siteFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
