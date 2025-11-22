@@ -1,5 +1,5 @@
 /* =========================================
-   HERO plein écran avec image de fond
+   HERO plein écran avec image nette
    ========================================= */
 
 .hero-landing {
@@ -24,17 +24,26 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(2px) brightness(0.7);
-  transform: scale(1.05); /* pour compenser le blur */
+
+  /* ⚠️ plus de flou ici */
+  /* image nette mais légèrement assombrie pour le texte */
+  filter: brightness(0.75);
+
+  /* très léger zoom pour éviter les bords lors de l’animation */
+  transform: scale(1.03);
+
   animation: heroFloat 22s ease-in-out infinite alternate;
 }
 
 /* Overlay foncé pour garder ton thème */
-
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.4), rgba(3, 7, 18, 0.95));
+  background: radial-gradient(
+    circle at top,
+    rgba(15, 23, 42, 0.15),
+    rgba(3, 7, 18, 0.85)
+  );
   z-index: -1;
 }
 
@@ -93,8 +102,6 @@
 .hero-tags-center {
   justify-content: center;
 }
-
-/* Les classes .btn et .tag existent déjà dans components.css, on réutilise */
 
 /* Responsive */
 
