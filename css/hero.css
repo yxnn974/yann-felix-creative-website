@@ -96,3 +96,22 @@
   0% { opacity: 1; transform: translate(-50%, 0); }
   100% { opacity: 0; transform: translate(-50%, 10px); }
 }
+
+/* Centrer parfaitement le contenu du HERO */
+.hero-content {
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  padding: 3rem 1rem;
+  z-index: 5;
+}
