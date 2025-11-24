@@ -207,3 +207,19 @@
   margin-top: 1rem;
 }
 
+/* Couleur bleue pour le texte du HERO */
+.hero-content,
+.hero-title,
+.hero-subtitle,
+.hero-badge,
+.hero-tagline,
+.hero-typing {
+  color: #a5d8ff !important;
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(90deg, #89c2ff, #a5d8ff, #c4e4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
