@@ -241,3 +241,27 @@
 .hero-title .gradient-text:hover {
   filter: drop-shadow(0 0 10px rgba(176, 144, 255, 0.4));
 }
+
+/* ==== Typing effect styling ==== */
+
+/* Couleur du texte typing */
+.hero-typing span#typing {
+  color: #8AB4FF; /* Bleu-violet doux */
+  font-weight: 600;
+}
+
+/* Curseur clignotant */
+.hero-typing::after {
+  content: "|";
+  margin-left: 6px;
+  color: #8AB4FF;
+  font-weight: 700;
+  animation: blinkCursor 0.8s infinite;
+}
+
+/* Animation du curseur */
+@keyframes blinkCursor {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
