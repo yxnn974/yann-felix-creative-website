@@ -1,18 +1,23 @@
 <section id="hero" class="hero-landing">
 
-  <!-- Image de fond + overlay -->
-  <div class="hero-bg">
-    <img
-      src="./images/antenne-parabole-space.jpg"
-      alt="Antenne satellite sous un ciel étoilé"
-      class="hero-bg-image"
-    />
+  <!-- SLIDER -->
+  <div class="hero-slider">
+
+    <!-- Images du slider -->
+    <img src="./images/antenne-parabole-space.jpg" class="hero-slide active" alt="Slide 1">
+    <img src="./images/parabole-off.jpg" class="hero-slide" alt="Slide 2">
+    <img src="./images/parabole-sunset.jpg" class="hero-slide" alt="Slide 3">
+
+    <!-- Overlay -->
     <div class="hero-bg-overlay"></div>
+
+    <!-- Flèches -->
+    <button class="hero-arrow left" id="hero-prev">&#10094;</button>
+    <button class="hero-arrow right" id="hero-next">&#10095;</button>
   </div>
 
   <!-- Contenu -->
   <div class="hero-content container">
-    
     <span class="hero-badge">Réseaux • Télécoms • Sécurité</span>
 
     <h1 class="hero-title hero-title-center">
@@ -42,11 +47,10 @@
       <span class="tag">VoIP</span>
     </div>
 
-  </div>
-
-  <!-- Indicateur scroll -->
-  <div class="scroll-indicator">
-    <span class="scroll-indicator-arrow"></span>
+    <!-- Indicateur de scroll -->
+    <div class="scroll-indicator">
+      <span class="scroll-indicator-arrow"></span>
+    </div>
   </div>
 
 </section>

@@ -1,9 +1,3 @@
-// include.js
-// Chargement des includes + thème + animations + typing
-
-/* =============================
-   1. Restaurer le thème sauvegardé
-   ============================= */
 function setupThemeFromStorage() {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "light") {
@@ -11,9 +5,6 @@ function setupThemeFromStorage() {
   }
 }
 
-/* =============================
-   2. Mode clair / sombre
-   ============================= */
 function setupThemeToggle() {
   document.addEventListener("click", (event) => {
     const toggleBtn = event.target.closest("#theme-toggle");
@@ -25,37 +16,6 @@ function setupThemeToggle() {
   });
 }
 
-/* =============================
-   3. Animation fade-in-up
-   ============================= */
-function setupFadeInAnimations() {
-  const elements = document.querySelectorAll(".fade-in-up");
-
-  if (!elements.length) return;
-
-  if (!("IntersectionObserver" in window)) {
-    elements.forEach((el) => el.classList.add("is-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-
-  elements.forEach((el) => observer.observe(el));
-}
-
-/* =============================
-   4. Chargement des includes
-   ============================= */
 function loadIncludes() {
   const includeElems = document.querySelectorAll("[data-include]");
   const promises = [];
@@ -64,93 +24,103 @@ function loadIncludes() {
     const file = elem.getAttribute("data-include");
 
     const p = fetch(file)
-      .then((response) => {
-        if (!response.ok) throw new Error(`Impossible de charger : ${file}`);
-        return response.text();
-      })
-      .then((data) => (elem.innerHTML = data))
-      .catch(
-        (err) =>
-          (elem.innerHTML = `<p style="color:red;">Erreur : ${err.message}</p>`)
-      );
+      .then(res => res.text())
+      .then(html => elem.innerHTML = html)
+      .catch(err => elem.innerHTML = `<p style="color:red">${err}</p>`);
 
     promises.push(p);
   });
 
   Promise.all(promises).then(() => {
-    setupFadeInAnimations();
-    setupTypingEffect(); // important !
+    setupSlider();
+    setupTyping();
   });
 }
 
-/* =============================
-   5. Effet typing
-   ============================= */
-function setupTypingEffect() {
+
+/* =======================================================
+   EFFET TYPING
+======================================================= */
+function setupTyping() {
   const typingEl = document.getElementById("typing");
   if (!typingEl) return;
 
-  const words = [
-    "les réseaux",
-    "les télécommunications",
-    "la cybersécurité",
-    "Linux",
-  ];
-
-  let wordIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
+  const words = ["Linux", "les réseaux", "la cybersécurité", "l'infrastructure"];
+  let index = 0, char = 0, removing = false;
 
   function type() {
-    const current = words[wordIndex];
+    const word = words[index];
 
-    if (!deleting) {
-      charIndex++;
-      if (charIndex >= current.length) {
-        deleting = true;
-        setTimeout(type, 1300);
-        typingEl.textContent = current;
-        return;
-      }
+    typingEl.textContent = word.substring(0, char);
+
+    if (!removing && char < word.length) {
+      char++;
+    } else if (removing && char > 0) {
+      char--;
     } else {
-      charIndex--;
-      if (charIndex <= 0) {
-        deleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-      }
+      removing = !removing;
+      if (!removing) index = (index + 1) % words.length;
     }
 
-    typingEl.textContent = current.slice(0, charIndex);
-    setTimeout(type, deleting ? 60 : 90);
+    setTimeout(type, removing ? 60 : 90);
   }
-
   type();
 }
 
-/* =============================
-   6. Initialisation globale
-   ============================= */
+
+/* =======================================================
+   SLIDER HERO
+======================================================= */
+function setupSlider() {
+  const slides = document.querySelectorAll(".hero-slide");
+  const prev = document.getElementById("hero-prev");
+  const next = document.getElementById("hero-next");
+
+  if (!slides.length) return;
+
+  let index = 0;
+  let interval;
+
+  function showSlide(i) {
+    slides.forEach((s, idx) => s.classList.toggle("active", i === idx));
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }
+
+  function prevSlideFunc() {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  }
+
+  next.addEventListener("click", () => {
+    nextSlide();
+    restart();
+  });
+
+  prev.addEventListener("click", () => {
+    prevSlideFunc();
+    restart();
+  });
+
+  function start() {
+    interval = setInterval(nextSlide, 5000);
+  }
+
+  function restart() {
+    clearInterval(interval);
+    start();
+  }
+
+  showSlide(index);
+  start();
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   setupThemeFromStorage();
   setupThemeToggle();
   loadIncludes();
 });
-
-/* ============================
-   Parallax effect on hero image
-   ============================ */
-
-function setupParallax() {
-  const heroImage = document.querySelector(".hero-bg-image");
-  if (!heroImage) return;
-
-  window.addEventListener("scroll", () => {
-    const scrolled = window.scrollY;
-    const offset = scrolled * 0.25; // vitesse du parallax
-    heroImage.style.setProperty("--parallax-offset", `${offset}px`);
-    heroImage.classList.add("parallax-active");
-  });
-}
-
-// Activation du parallax après chargement
-setupParallax();
