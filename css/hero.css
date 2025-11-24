@@ -207,19 +207,37 @@
   margin-top: 1rem;
 }
 
-/* Couleur bleue pour le texte du HERO */
+//* ============================================
+   TEXTE BLEU-VIOLET (lisible sur les fonds)
+   ============================================ */
+
 .hero-content,
 .hero-title,
 .hero-subtitle,
 .hero-badge,
-.hero-tagline,
 .hero-typing {
-  color: #a5d8ff !important;
+  color: #b9c6ff !important; /* bleu-violet clair */
+}
+
+.hero-badge {
+  color: #c9d4ff !important;
+}
+
+.hero-subtitle {
+  color: #c9d4ff !important;
+}
+
+.hero-typing {
+  color: #c9d4ff !important;
 }
 
 .hero-title .gradient-text {
-  background: linear-gradient(90deg, #89c2ff, #a5d8ff, #c4e4ff);
+  background: linear-gradient(90deg, #7aa2ff, #b388ff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent !important;
+}
+
+.hero-title .gradient-text:hover {
+  filter: drop-shadow(0 0 10px rgba(176, 144, 255, 0.4));
 }
