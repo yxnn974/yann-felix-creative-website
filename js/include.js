@@ -135,3 +135,22 @@ document.addEventListener("DOMContentLoaded", () => {
   setupThemeToggle();
   loadIncludes();
 });
+
+/* ============================
+   Parallax effect on hero image
+   ============================ */
+
+function setupParallax() {
+  const heroImage = document.querySelector(".hero-bg-image");
+  if (!heroImage) return;
+
+  window.addEventListener("scroll", () => {
+    const scrolled = window.scrollY;
+    const offset = scrolled * 0.25; // vitesse du parallax
+    heroImage.style.setProperty("--parallax-offset", `${offset}px`);
+    heroImage.classList.add("parallax-active");
+  });
+}
+
+// Activation du parallax après chargement
+setupParallax();
