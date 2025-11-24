@@ -27,7 +27,7 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0,6rem;
   text-decoration: none;
   margin-right: 2rem;       /* ← éloigne du menu */
 }
