@@ -98,11 +98,8 @@ function setupTypingEffect() {
 
   // Liste des mots (tu peux en ajouter autant que tu veux)
   const words = [
-    "les réseaux hertziens et satellites",
-    "les systèmes d’information et de communication",
-    "les infrastructures télécoms modernes",
-    "la cybersécurité appliquée aux réseaux",
-    "les systèmes Linux"
+    "les systèmes satellitaires.",
+    "les infrastructures télécoms modernes"
   ];
 
   let i = 0;   // mot

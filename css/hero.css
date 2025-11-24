@@ -242,26 +242,23 @@
   filter: drop-shadow(0 0 10px rgba(176, 144, 255, 0.4));
 }
 
-/* ==== Typing effect styling ==== */
+/* ====== TYPING EFFECT — PURPLE VERSION ====== */
 
-/* Couleur du texte typing */
-.hero-typing span#typing {
-  color: #8AB4FF; /* Bleu-violet doux */
+#typing {
+  color: #b388ff;
   font-weight: 600;
+  font-size: 1.1rem;
 }
 
-/* Curseur clignotant */
-.hero-typing::after {
+#typing::after {
   content: "|";
-  margin-left: 6px;
-  color: #8AB4FF;
-  font-weight: 700;
-  animation: blinkCursor 0.8s infinite;
+  margin-left: 4px;
+  color: #b388ff;
+  font-weight: 600;
+  animation: blinkCursor 0.9s infinite;
 }
 
-/* Animation du curseur */
 @keyframes blinkCursor {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
