@@ -154,10 +154,8 @@ function setupTypingEffect() {
   if (!typingEl) return;
 
   const words = [
-    "les réseaux",
-    "les télécommunications",
-    "la cybersécurité",
-    "Linux",
+    "les réseaux 5G",
+    "les infrastructures télécoms",
   ];
 
   let wordIndex = 0;
