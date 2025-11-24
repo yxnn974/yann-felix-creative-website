@@ -1,20 +1,16 @@
 /* ============================================================
-   POLICES PROFESSIONNELLES
+   POLICE IDENTIQUE À LA NAVBAR (POPPINS)
    ============================================================ */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=DM+Sans:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* Titres */
-.hero-title {
-  font-family: "DM Sans", sans-serif;
-  font-weight: 700;
-}
-
-/* Textes secondaires */
+.hero-title,
 .hero-subtitle,
 .hero-badge,
 .hero-tagline,
-.hero-typing {
-  font-family: "Inter", sans-serif;
+.hero-typing,
+.hero-actions a,
+.tag {
+  font-family: "Poppins", sans-serif;
 }
 
 
@@ -153,7 +149,7 @@
   padding: 3rem 1rem;
   z-index: 10;
 
-  /* Placement vertical */
+  /* Cadrage précis */
   top: 50%;
   transform: translateY(-50%);
 }
@@ -161,7 +157,7 @@
 
 
 /* ============================================================
-   ANIMATION D’APPARITION DU TEXTE
+   ANIMATION D’APPARITION
    ============================================================ */
 
 .fade-hero {
@@ -176,8 +172,3 @@
     transform: translateY(0);
   }
 }
-
-
-/* ============================================================
-   FIN DU FICHIER
-   ============================================================ */
