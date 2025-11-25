@@ -1,10 +1,15 @@
 /* =========================================
-   Thème clair / sombre
+   Thème clair / sombre premium
    ========================================= */
 
-/* Thème par défaut = sombre (défini par :root + body) */
+/* Transition douce sur les couleurs */
+body {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
 
-/* Thème clair : on override certaines couleurs quand body a la classe .light-theme */
+/* Thème clair : on override certaines couleurs quand body a .light-theme */
 
 body.light-theme {
   --bg: #f4f4f5;
