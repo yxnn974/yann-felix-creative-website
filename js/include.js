@@ -1,17 +1,63 @@
-/******************************************
- *  LOAD INCLUDES (header, hero, footer…)
- ******************************************/
+// include.js
+// - Charge les fragments HTML (header, sections, footer)
+// - Gère le thème clair / sombre
+// - Gère le slider du hero
+// - Gère l'effet "typing"
+// - Active les animations .fade-in-up
+
+// Applique le thème sauvegardé le plus tôt possible
+applySavedTheme();
+
+// Quand le DOM est prêt, on charge les includes
+document.addEventListener("DOMContentLoaded", () => {
+  loadIncludes();
+});
+
+/* ------------------------------------
+ *  Thème : charger l'état sauvegardé
+ * ------------------------------------ */
+function applySavedTheme() {
+  const saved = localStorage.getItem("theme");
+  if (saved === "light") {
+    document.body.classList.add("light-theme");
+  }
+}
+
+/* ------------------------------------
+ *  Chargement des includes HTML
+ * ------------------------------------ */
 function loadIncludes() {
   const includeElems = document.querySelectorAll("[data-include]");
+
+  // S'il n'y a pas d'include, on initialise quand même les fonctionnalités globales
+  if (!includeElems.length) {
+    setupThemeToggle();
+    setupSlider();
+    setupTypingEffect();
+    setupFadeInAnimations();
+    updateFooterYear();
+    return;
+  }
+
   const promises = [];
 
-  includeElems.forEach(elem => {
+  includeElems.forEach((elem) => {
     const file = elem.getAttribute("data-include");
+    if (!file) return;
 
     const p = fetch(file)
-      .then(res => res.text())
-      .then(html => {
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(`Erreur de chargement : ${file} (${res.status})`);
+        }
+        return res.text();
+      })
+      .then((html) => {
         elem.innerHTML = html;
+      })
+      .catch((err) => {
+        console.error(err);
+        elem.innerHTML = `<p style="color:red;font-size:0.85rem;">${err.message}</p>`;
       });
 
     promises.push(p);
@@ -21,49 +67,40 @@ function loadIncludes() {
     setupThemeToggle();
     setupSlider();
     setupTypingEffect();
+    setupFadeInAnimations();
+    updateFooterYear();
   });
 }
 
-document.addEventListener("DOMContentLoaded", loadIncludes);
-
-
-/******************************************
- *  DARK / LIGHT MODE
- ******************************************/
+/* ------------------------------------
+ *  Bouton thème clair / sombre
+ * ------------------------------------ */
 function setupThemeToggle() {
   const btn = document.querySelector("#theme-toggle");
   if (!btn) return;
 
-  // Charge le thème sauvegardé
-  const saved = localStorage.getItem("theme");
-  if (saved === "light") document.body.classList.add("light-theme");
-
   btn.addEventListener("click", () => {
     document.body.classList.toggle("light-theme");
-
-    localStorage.setItem(
-      "theme",
-      document.body.classList.contains("light-theme") ? "light" : "dark"
-    );
+    const isLight = document.body.classList.contains("light-theme");
+    localStorage.setItem("theme", isLight ? "light" : "dark");
   });
 }
 
-
-/******************************************
- *  HERO BACKGROUND SLIDER
- ******************************************/
+/* ------------------------------------
+ *  Hero : slider d’images de fond
+ * ------------------------------------ */
 function setupSlider() {
   const slides = document.querySelectorAll(".hero-slide");
+  if (!slides.length) return;
+
   const prev = document.querySelector(".hero-prev");
   const next = document.querySelector(".hero-next");
-
-  if (!slides.length) return;
 
   let index = 0;
   const total = slides.length;
 
   function showSlide(i) {
-    slides.forEach(s => s.classList.remove("active"));
+    slides.forEach((s) => s.classList.remove("active"));
     slides[i].classList.add("active");
   }
 
@@ -77,59 +114,89 @@ function setupSlider() {
     showSlide(index);
   }
 
-  // Flèches cliquables
   if (next) next.addEventListener("click", nextSlide);
   if (prev) prev.addEventListener("click", prevSlide);
 
-  // Défilement automatique
-  setInterval(nextSlide, 10000);
+  // Défilement automatique uniquement si plusieurs images
+  if (total > 1) {
+    setInterval(nextSlide, 10000);
+  }
 
-  // Charge la première image
   showSlide(index);
 }
 
-
-/******************************************
- *  TYPING EFFECT (machine à écrire)
- ******************************************/
+/* ------------------------------------
+ *  Effet "machine à écrire"
+ * ------------------------------------ */
 function setupTypingEffect() {
   const el = document.getElementById("typing");
   if (!el) return;
 
-  // Liste des mots (tu peux en ajouter autant que tu veux)
   const words = [
     "les systèmes satellitaires.",
     "les infrastructures télécoms modernes"
   ];
 
-  let i = 0;   // mot
-  let j = 0;   // caractère
+  let wordIndex = 0;
+  let charIndex = 0;
   let deleting = false;
 
   function type() {
-    const word = words[i];
+    const word = words[wordIndex];
+    el.textContent = word.substring(0, charIndex);
 
-    el.textContent = word.substring(0, j);
-
-    // FIN DU MOT → pause puis suppression
-    if (!deleting && j === word.length) {
+    if (!deleting && charIndex === word.length) {
       deleting = true;
       setTimeout(type, 1200);
       return;
     }
 
-    // MOT SUPPRIMÉ → mot suivant
-    if (deleting && j === 0) {
+    if (deleting && charIndex === 0) {
       deleting = false;
-      i = (i + 1) % words.length;
+      wordIndex = (wordIndex + 1) % words.length;
     }
 
-    j += deleting ? -1 : 1;
-
-    // vitesse
+    charIndex += deleting ? -1 : 1;
     const speed = deleting ? 55 : 90;
     setTimeout(type, speed);
   }
 
   type();
+}
+
+/* ------------------------------------
+ *  Animations .fade-in-up
+ * ------------------------------------ */
+function setupFadeInAnimations() {
+  const elements = document.querySelectorAll(".fade-in-up");
+  if (!elements.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    elements.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+}
+
+/* ------------------------------------
+ *  Footer : année dynamique
+ * ------------------------------------ */
+function updateFooterYear() {
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 }
