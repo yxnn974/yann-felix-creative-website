@@ -1,64 +1,32 @@
 // include.js
-// - Charge les fragments HTML (header, sections, footer)
-// - Gère le thème clair / sombre
-// - Gère le slider du hero
-// - Gère l'effet "typing"
-// - Active les animations .fade-in-up
+// - Header / Footer includes
+// - Mode clair / sombre
+// - Slider auto
+// - Typing effect
+// - Fade animations
+// - Footer year
 
-// Applique le thème sauvegardé le plus tôt possible
 applySavedTheme();
+document.addEventListener("DOMContentLoaded", () => loadIncludes());
 
-// Quand le DOM est prêt, on charge les includes
-document.addEventListener("DOMContentLoaded", () => {
-  loadIncludes();
-});
-
-/* ------------------------------------
- *  Thème : charger l'état sauvegardé
- * ------------------------------------ */
 function applySavedTheme() {
   const saved = localStorage.getItem("theme");
-  if (saved === "light") {
-    document.body.classList.add("light-theme");
-  }
+  if (saved === "light") document.body.classList.add("light-theme");
 }
 
-/* ------------------------------------
- *  Chargement des includes HTML
- * ------------------------------------ */
+/* --------------------- LOAD INCLUDES --------------------- */
 function loadIncludes() {
-  const includeElems = document.querySelectorAll("[data-include]");
-
-  // S'il n'y a pas d'include, on initialise quand même les fonctionnalités globales
-  if (!includeElems.length) {
-    setupThemeToggle();
-    setupSlider();
-    setupTypingEffect();
-    setupFadeInAnimations();
-    updateFooterYear();
-    return;
-  }
-
+  const includes = document.querySelectorAll("[data-include]");
   const promises = [];
 
-  includeElems.forEach((elem) => {
-    const file = elem.getAttribute("data-include");
+  includes.forEach((el) => {
+    const file = el.getAttribute("data-include");
     if (!file) return;
 
     const p = fetch(file)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Erreur de chargement : ${file} (${res.status})`);
-        }
-        return res.text();
-      })
-      .then((html) => {
-        elem.innerHTML = html;
-      })
-      .catch((err) => {
-        console.error(err);
-        elem.innerHTML = `<p style="color:red;font-size:0.85rem;">${err.message}</p>`;
-      });
+      .then((res) => res.text())
+      .then((html) => (el.innerHTML = html))
+      .catch((err) => (el.innerHTML = `<p>${err}</p>`));
 
     promises.push(p);
   });
@@ -72,23 +40,175 @@ function loadIncludes() {
   });
 }
 
-/* ------------------------------------
- *  Bouton thème clair / sombre
- * ------------------------------------ */
+/* --------------------- THEME --------------------- */
 function setupThemeToggle() {
   const btn = document.querySelector("#theme-toggle");
   if (!btn) return;
 
   btn.addEventListener("click", () => {
     document.body.classList.toggle("light-theme");
-    const isLight = document.body.classList.contains("light-theme");
-    localStorage.setItem("theme", isLight ? "light" : "dark");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("light-theme") ? "light" : "dark"
+    );
   });
 }
 
-/* ------------------------------------
- *  Hero : slider d’images de fond
- * ------------------------------------ */
+/* --------------------- SLIDER --------------------- */
+function setupSlider() {
+  const slides = document.querySelectorAll(".hero-slide");
+  if (slides.length === 0) return;
+
+  const prev = document.querySelector(".hero-prev");
+  const next = document.querySelector(".hero-next");
+
+  let index = 0;
+
+  function show(i) {
+    slides.forEach((s) => s.classList.remove("active"));
+    slides[i].classList.add("active");
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    show(index);
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    show(index);
+  }
+
+  if (next) next.addEventListener("click", nextSlide);
+  if (prev) prev.addEventListener("click", prevSlide);
+
+  // Auto défilement
+  setInterval(nextSlide, 8000);
+
+  show(index);
+}
+
+/* --------------------- TYPING --------------------- */
+function setupTypingEffect() {
+  const el = document.getElementById("typing");
+  if (!el) return;
+
+  const words = [
+    "les réseaux.",
+    "la cybersécurité.",
+    "les systèmes satellitaires.",
+    "la téléphonie moderne."
+  ];
+
+  let i = 0, j = 0, del = false;
+
+  function type() {
+    el.textContent = words[i].slice(0, j);
+
+    if (!del && j === words[i].length) {
+      del = true;
+      return setTimeout(type, 1200);
+    }
+    if (del && j === 0) {
+      del = false;
+      i = (i + 1) % words.length;
+    }
+
+    j += del ? -1 : 1;
+
+    setTimeout(type, del ? 45 : 90);
+  }
+
+  type();
+}
+
+/* --------------------- FADES --------------------- */
+function setupFadeInAnimations() {
+  const els = document.querySelectorAll(".fade-in-up");
+  if (!els.length) return;
+
+  const obs =
+    "IntersectionObserver" in window
+      ? new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("is-visible");
+                obs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.15 }
+        )
+      : null;
+
+  els.forEach((el) =>
+    obs ? obs.observe(el) : el.classList.add("is-visible")
+  );
+}
+
+/* --------------------- YEAR --------------------- */
+function updateFooterYear() {
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
+}
+// include.js
+// - Header/Footer includes
+// - Dark/Light mode
+// - Slider auto + flèches
+// - Typing effect
+// - Fade animations
+// - Footer year
+
+applySavedTheme();
+document.addEventListener("DOMContentLoaded", () => loadIncludes());
+
+function applySavedTheme() {
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+  }
+}
+
+/*********** LOAD HTML INCLUDES ***********/
+function loadIncludes() {
+  const parts = document.querySelectorAll("[data-include]");
+  const promises = [];
+
+  parts.forEach((el) => {
+    const file = el.getAttribute("data-include");
+    if (!file) return;
+
+    promises.push(
+      fetch(file)
+        .then((r) => r.text())
+        .then((html) => (el.innerHTML = html))
+    );
+  });
+
+  Promise.all(promises).then(() => {
+    setupThemeToggle();
+    setupSlider();
+    setupTypingEffect();
+    setupFadeInAnimations();
+    updateFooterYear();
+  });
+}
+
+/*********** THEME TOGGLE ***********/
+function setupThemeToggle() {
+  const btn = document.querySelector("#theme-toggle");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+    localStorage.setItem(
+      "theme",
+      document.body.classList.contains("light-theme") ? "light" : "dark"
+    );
+  });
+}
+
+/*********** HERO SLIDER ***********/
 function setupSlider() {
   const slides = document.querySelectorAll(".hero-slide");
   if (!slides.length) return;
@@ -97,106 +217,88 @@ function setupSlider() {
   const next = document.querySelector(".hero-next");
 
   let index = 0;
-  const total = slides.length;
 
-  function showSlide(i) {
+  function show(i) {
     slides.forEach((s) => s.classList.remove("active"));
     slides[i].classList.add("active");
   }
 
   function nextSlide() {
-    index = (index + 1) % total;
-    showSlide(index);
+    index = (index + 1) % slides.length;
+    show(index);
   }
 
   function prevSlide() {
-    index = (index - 1 + total) % total;
-    showSlide(index);
+    index = (index - 1 + slides.length) % slides.length;
+    show(index);
   }
+
+  // Auto défilement
+  setInterval(nextSlide, 8000);
 
   if (next) next.addEventListener("click", nextSlide);
   if (prev) prev.addEventListener("click", prevSlide);
 
-  // Défilement automatique uniquement si plusieurs images
-  if (total > 1) {
-    setInterval(nextSlide, 10000);
-  }
-
-  showSlide(index);
+  show(index);
 }
 
-/* ------------------------------------
- *  Effet "machine à écrire"
- * ------------------------------------ */
+/*********** TYPING ***********/
 function setupTypingEffect() {
   const el = document.getElementById("typing");
   if (!el) return;
 
   const words = [
     "les systèmes satellitaires.",
-    "les infrastructures télécoms modernes"
+    "les infrastructures télécoms.",
+    "la cybersécurité.",
+    "la technologie réseau."
   ];
 
-  let wordIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
+  let i = 0, j = 0, deleting = false;
 
   function type() {
-    const word = words[wordIndex];
-    el.textContent = word.substring(0, charIndex);
+    el.textContent = words[i].slice(0, j);
 
-    if (!deleting && charIndex === word.length) {
+    if (!deleting && j === words[i].length) {
       deleting = true;
-      setTimeout(type, 1200);
-      return;
+      return setTimeout(type, 1000);
     }
 
-    if (deleting && charIndex === 0) {
+    if (deleting && j === 0) {
       deleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
+      i = (i + 1) % words.length;
     }
 
-    charIndex += deleting ? -1 : 1;
-    const speed = deleting ? 55 : 90;
-    setTimeout(type, speed);
+    j += deleting ? -1 : 1;
+
+    setTimeout(type, deleting ? 40 : 90);
   }
 
   type();
 }
 
-/* ------------------------------------
- *  Animations .fade-in-up
- * ------------------------------------ */
+/*********** FADE ANIMATIONS ***********/
 function setupFadeInAnimations() {
-  const elements = document.querySelectorAll(".fade-in-up");
-  if (!elements.length) return;
+  const els = document.querySelectorAll(".fade-in-up");
+  if (!els.length) return;
 
-  if (!("IntersectionObserver" in window)) {
-    elements.forEach((el) => el.classList.add("is-visible"));
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          obs.unobserve(entry.target);
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          obs.unobserve(e.target);
         }
       });
     },
-    { threshold: 0.15 }
+    { threshold: 0.2 }
   );
 
-  elements.forEach((el) => observer.observe(el));
+  els.forEach((el) => obs.observe(el));
 }
 
-/* ------------------------------------
- *  Footer : année dynamique
- * ------------------------------------ */
+/*********** FOOTER YEAR ***********/
 function updateFooterYear() {
-  const yearEl = document.getElementById("year");
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  const y = document.getElementById("year");
+  if (y) y.textContent = new Date().getFullYear();
 }
