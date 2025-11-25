@@ -2,34 +2,78 @@
    Sections : About, Formation, Projets, Skills, Contact
    ========================================= */
 
-/* À propos */
 
+/* ---------------------------------------------------
+   SECTION À PROPOS — VERSION PREMIUM
+--------------------------------------------------- */
+
+/* Titre + intro */
+.about-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 2.8rem;
+}
+
+.about-intro {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+/* GRID principale */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
-  gap: 2rem;
-  align-items: flex-start;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+  gap: 2.5rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* Image */
+.about-left {
+  display: flex;
+  justify-content: center;
 }
 
 .about-image {
   width: 100%;
-  border-radius: 0.9rem;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.8);
-  margin-bottom: 1rem;
-  display: block;
+  max-width: 520px;
+  border-radius: 1rem;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  object-fit: cover;
 }
 
+/* Texte principal */
+.about-description p {
+  line-height: 1.65;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+/* Cartes (Langues - Mobilité - Intérêts) */
 .about-cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 1.2rem;
 }
 
-.about-right .card p + p {
-  margin-top: 0.6rem;
+.about-cards .card {
+  padding: 1.4rem;
+  border-radius: 1rem;
 }
 
-/* Formation */
+.about-cards h3 {
+  margin-top: 0;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+
+/* ---------------------------------------------------
+   SECTION FORMATION
+--------------------------------------------------- */
 
 .education-grid {
   display: grid;
@@ -41,6 +85,7 @@
   padding: 0;
   overflow: hidden;
   position: relative;
+  border-radius: 0.9rem;
 }
 
 .image-card img {
@@ -69,7 +114,10 @@
   margin-bottom: 0.5rem;
 }
 
-/* Projets */
+
+/* ---------------------------------------------------
+   SECTION PROJETS
+--------------------------------------------------- */
 
 .projects-grid {
   display: grid;
@@ -82,7 +130,10 @@
   margin-bottom: 0.75rem;
 }
 
-/* Compétences */
+
+/* ---------------------------------------------------
+   SECTION COMPÉTENCES
+--------------------------------------------------- */
 
 .skills-grid {
   display: grid;
@@ -94,10 +145,52 @@
   font-size: 0.9rem;
 }
 
-/* Contact */
+
+/* ---------------------------------------------------
+   SECTION CONTACT
+--------------------------------------------------- */
 
 .contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.6fr);
   gap: 2rem;
+}
+
+
+/* ---------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .about-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .education-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
