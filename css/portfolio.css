@@ -26,3 +26,53 @@ body {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
+
+/* =========================================
+   TIMELINE PREMIUM
+========================================= */
+
+.timeline-section {
+  margin: 4rem auto;
+  max-width: 900px;
+}
+
+.timeline-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 1.5rem;
+  border-left: 2px solid rgba(148, 163, 184, 0.25);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 1.5rem 0 1.5rem 2rem;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -10px;
+  top: 2rem;
+  width: 14px;
+  height: 14px;
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  border-radius: 50%;
+}
+
+.timeline-content.card {
+  padding: 1.2rem 1.4rem;
+}
+
+.timeline-content h4 {
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+}
+
+.timeline .edu-school {
+  margin-bottom: 0.3rem;
+  color: var(--text-muted);
+}
