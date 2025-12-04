@@ -468,6 +468,18 @@ textarea {
 
 /* Compétences */
 
+/* Met en avant le premier bloc (Télécommunications) */
+.skills-grid .skill-card:first-child {
+  border-color: #4f7cff;          /* bleu violet premium */
+  box-shadow: 0 0 22px rgba(79,124,255,0.25);
+  transform: scale(1.02);
+}
+
+/* Optionnel : au survol */
+.skills-grid .skill-card:first-child:hover {
+  transform: scale(1.035);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
