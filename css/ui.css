@@ -622,3 +622,16 @@ textarea {
     font-size: 2.3rem;
   }
 }
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeInUp 0.9s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
