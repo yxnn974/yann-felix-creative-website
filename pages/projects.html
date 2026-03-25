@@ -1,35 +1,142 @@
-<div class="section-container fade-in-up">
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title gradient-text">Mes projets Télécom</h2>
+    <div class="section-divider"></div>
 
-  <h1 class="section-title">Mes projets Télécom</h1>
-  <div class="section-title-underline"></div>
+    <div class="projects-grid">
 
-  <div class="projects-grid">
+      <article class="card project-card fade-in-up">
+        <div class="project-tag-row">
+          <span class="tag">SDR</span>
+          <span class="tag">RF</span>
+          <span class="tag">1090 MHz</span>
+        </div>
+        <h3>📡 Réception ADS-B (Radar aérien 1090 MHz)</h3>
+        <p>
+          Mise en place d'un système de réception ADS-B avec un dongle RTL-SDR
+          et une antenne colinéaire. Décodage des messages Mode-S, analyse
+          spectrale et affichage des avions sur carte.
+        </p>
+        <a href="#" class="project-link">
+          <span class="project-link-icon">📄</span>
+          Ouvrir le TP complet (PDF)
+        </a>
+      </article>
 
-    <!-- Projet 1 -->
-    <div class="project-card">
-      <h3 class="project-title">📡 Réception ADS-B (Radar aérien 1090 MHz)</h3>
-      <p class="project-desc">
-        Mise en place d’un système de réception ADS-B avec un dongle RTL-SDR et une antenne 
-        colinéaire. Décodage des messages Mode-S, analyse spectrale et affichage des avions sur carte.
-      </p>
+      <article class="card project-card fade-in-up">
+        <div class="project-tag-row">
+          <span class="tag">DVB-T</span>
+          <span class="tag">SDRSharp</span>
+          <span class="tag">UHF</span>
+        </div>
+        <h3>📺 Analyse de la TNT &amp; réseaux de diffusion hertziens</h3>
+        <p>
+          Réception et analyse de signaux DVB-T via SDRSharp. Mesure du
+          niveau reçu, bande passante, influence du LNA et orientation de
+          l'antenne UHF.
+        </p>
+        <a href="#" class="project-link">
+          <span class="project-link-icon">📄</span>
+          Ouvrir le TP complet (PDF)
+        </a>
+      </article>
 
-      <a href="../docs/SAE03.ROM.04-TP1.pdf" target="_blank" class="project-btn">
-        📄 Ouvrir le TP complet (PDF)
-      </a>
+      <article class="card project-card fade-in-up">
+        <div class="project-tag-row">
+          <span class="tag">VLAN</span>
+          <span class="tag">DHCP</span>
+          <span class="tag">DNS</span>
+        </div>
+        <h3>🖧 SAE Réseau d'entreprise</h3>
+        <p>
+          Conception d'un réseau complet avec VLAN, routage inter-VLAN
+          et services (DHCP, DNS…).
+        </p>
+      </article>
+
+      <article class="card project-card fade-in-up">
+        <div class="project-tag-row">
+          <span class="tag">VoIP</span>
+          <span class="tag">SIP</span>
+          <span class="tag">Asterisk</span>
+        </div>
+        <h3>📞 Serveur VoIP Asterisk</h3>
+        <p>
+          Installation, configuration SIP et tests d'appels internes
+          sur Debian.
+        </p>
+      </article>
+
+      <article class="card project-card fade-in-up">
+        <div class="project-tag-row">
+          <span class="tag">TCP/IP</span>
+          <span class="tag">Wireshark</span>
+        </div>
+        <h3>🔍 Analyse Wireshark</h3>
+        <p>
+          Étude et inspection de trames TCP/IP, identification des protocoles
+          et échanges réseau.
+        </p>
+      </article>
+
     </div>
-
-    <!-- Projet 2 -->
-    <div class="project-card">
-      <h3 class="project-title">📺 Analyse de la TNT & réseaux de diffusion hertziens</h3>
-      <p class="project-desc">
-        Réception et analyse de signaux DVB-T via SDRSharp. Mesure du niveau reçu, bande passante,
-        influence du LNA et orientation de l’antenne UHF.
-      </p>
-
-      <a href="../docs/SAE03.ROM.04-TP2.pdf" target="_blank" class="project-btn">
-        📄 Ouvrir le TP complet (PDF)
-      </a>
-    </div>
-
   </div>
-</div>
+</section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .project-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .project-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: 1.1rem;
+    font-size: 0.8rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--accent-cyan);
+    border: 1px solid var(--border);
+    background: var(--accent-glow);
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+    text-decoration: none;
+  }
+
+  .project-link:hover {
+    border-color: var(--border-hover);
+    background: rgba(0, 200, 255, 0.2);
+    color: #fff;
+    transform: translateX(3px);
+  }
+
+  .project-link-icon {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+</style>
