@@ -1,7 +1,6 @@
 <section id="projects" class="section">
   <div class="container">
 
-    <!-- En-tête -->
     <div class="projects-header">
       <h2 class="section-title gradient-text">Mes Projets R&amp;T</h2>
       <div class="section-divider"></div>
@@ -20,9 +19,9 @@
     </div>
 
     <!-- Grille -->
-    <div class="projects-grid" id="projects-grid">
+    <div class="projects-grid">
 
-      <!-- Câble SMART -->
+      <!-- ① Câble SMART — 2 liens -->
       <article class="project-glass-card fade-in-up" data-category="telecom">
         <div class="project-card-img">
           <div class="project-card-img-bg cable"></div>
@@ -37,14 +36,24 @@
         <div class="project-card-body">
           <h3>Câble Sous-Marin Réunion – Mayotte</h3>
           <p>Stratégie de maintenance préventive d'un câble SMART 1 500 km. Surveillance IA, drones sous-marins (AUV), jumeau numérique et protocole d'intervention correctif.</p>
-          <a href="../assets/Projet_câble_SMART.pdf" target="_blank" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Voir le projet (PDF)
-          </a>
+          <div class="project-links-row">
+            <a href="../documents/projet_cable_smart.pdf"
+               class="project-link pdf-preview-link"
+               data-title="Câble Sous-Marin — Diapositive">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Diapo (PDF)
+            </a>
+            <a href="../documents/projet_ppp.pdf"
+               class="project-link pdf-preview-link project-link-alt"
+               data-title="Câble Sous-Marin — Rapport technique">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Rapport (PDF)
+            </a>
+          </div>
         </div>
       </article>
 
-      <!-- ADS-B -->
+      <!-- ② ADS-B -->
       <article class="project-glass-card fade-in-up" data-category="telecom">
         <div class="project-card-img">
           <div class="project-card-img-bg adsb"></div>
@@ -59,14 +68,18 @@
         <div class="project-card-body">
           <h3>Réception ADS-B — Radar aérien</h3>
           <p>Mise en place d'un système de réception ADS-B avec dongle RTL-SDR et antenne colinéaire. Décodage Mode-S et affichage des avions sur carte.</p>
-          <a href="#" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Voir le projet (PDF)
-          </a>
+          <div class="project-links-row">
+            <a href="../documents/tp2_reception_avions.pdf"
+               class="project-link pdf-preview-link"
+               data-title="Réception ADS-B — TP complet">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Voir le projet (PDF)
+            </a>
+          </div>
         </div>
       </article>
 
-      <!-- TNT -->
+      <!-- ③ TNT -->
       <article class="project-glass-card fade-in-up" data-category="telecom">
         <div class="project-card-img">
           <div class="project-card-img-bg tnt"></div>
@@ -81,76 +94,14 @@
         <div class="project-card-body">
           <h3>Analyse TNT &amp; diffusion hertzienne</h3>
           <p>Réception et analyse de signaux DVB-T via SDRSharp. Mesure du niveau reçu, bande passante, influence du LNA et orientation de l'antenne UHF.</p>
-          <a href="#" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Voir le projet (PDF)
-          </a>
-        </div>
-      </article>
-
-      <!-- SAE Réseau -->
-      <article class="project-glass-card fade-in-up" data-category="reseau">
-        <div class="project-card-img">
-          <div class="project-card-img-bg reseau"></div>
-          <div class="project-card-img-overlay">
-            <div class="project-card-tags">
-              <span class="tag">VLAN</span>
-              <span class="tag">DHCP</span>
-              <span class="tag">DNS</span>
-            </div>
+          <div class="project-links-row">
+            <a href="../documents/tp1_reception_tnt.pdf"
+               class="project-link pdf-preview-link"
+               data-title="Analyse TNT — TP complet">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Voir le projet (PDF)
+            </a>
           </div>
-        </div>
-        <div class="project-card-body">
-          <h3>SAE Réseau d'entreprise</h3>
-          <p>Conception d'un réseau complet avec VLAN, routage inter-VLAN et services DHCP/DNS. Simulation sur Packet Tracer et documentation technique.</p>
-          <a href="#" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Voir le projet
-          </a>
-        </div>
-      </article>
-
-      <!-- VoIP -->
-      <article class="project-glass-card fade-in-up" data-category="reseau">
-        <div class="project-card-img">
-          <div class="project-card-img-bg voip"></div>
-          <div class="project-card-img-overlay">
-            <div class="project-card-tags">
-              <span class="tag">VoIP</span>
-              <span class="tag">SIP</span>
-              <span class="tag">Asterisk</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-card-body">
-          <h3>Serveur VoIP Asterisk</h3>
-          <p>Installation et configuration SIP sur Debian. Tests d'appels internes, gestion des extensions et analyse des flux RTP.</p>
-          <a href="#" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Voir le projet
-          </a>
-        </div>
-      </article>
-
-      <!-- Wireshark -->
-      <article class="project-glass-card fade-in-up" data-category="reseau">
-        <div class="project-card-img">
-          <div class="project-card-img-bg wireshark"></div>
-          <div class="project-card-img-overlay">
-            <div class="project-card-tags">
-              <span class="tag">TCP/IP</span>
-              <span class="tag">Wireshark</span>
-              <span class="tag">Analyse</span>
-            </div>
-          </div>
-        </div>
-        <div class="project-card-body">
-          <h3>Analyse de trames Wireshark</h3>
-          <p>Étude et inspection de trames TCP/IP, identification des protocoles, échanges réseau et détection d'anomalies de trafic.</p>
-          <a href="#" class="project-link">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            Voir le projet
-          </a>
         </div>
       </article>
 
@@ -158,7 +109,38 @@
   </div>
 </section>
 
+<!-- ══════ MODALE PDF ══════ -->
+<div id="pdf-modal" class="pdf-modal" role="dialog" aria-modal="true">
+  <div class="pdf-modal-backdrop"></div>
+  <div class="pdf-modal-box">
+    <div class="pdf-modal-header">
+      <span class="pdf-modal-title" id="pdf-modal-title">Document</span>
+      <button class="pdf-modal-close" id="pdf-modal-close" aria-label="Fermer">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="pdf-modal-body">
+      <iframe id="pdf-modal-iframe" src="" title="Aperçu PDF"></iframe>
+    </div>
+    <div class="pdf-modal-footer">
+      <a id="pdf-modal-newwin" href="#" target="_blank" class="project-link">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+        Ouvrir dans un nouvel onglet
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ STYLES ══════ -->
 <style>
+/* Header */
 .projects-header { margin-bottom: 2.5rem; }
 .projects-intro {
   max-width: 560px;
@@ -169,23 +151,14 @@
 }
 
 /* Filtres */
-.projects-filters {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 3rem;
-}
+.projects-filters { display: flex; justify-content: center; margin-bottom: 3rem; }
 .filter-btn {
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
   padding: 0.65rem 1.5rem;
   border: 1px solid var(--border);
-  background: transparent;
-  color: var(--text-secondary);
-  cursor: pointer;
-  transition: all var(--transition);
-  margin: 0;
+  background: transparent; color: var(--text-secondary);
+  cursor: pointer; transition: all var(--transition); margin: 0;
 }
 .filter-btn:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); }
 .filter-btn:last-child  { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
@@ -193,28 +166,19 @@
 .filter-btn:hover { background: var(--accent-glow); color: var(--accent-cyan); }
 .filter-btn.active {
   background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-  color: var(--bg-base);
-  border-color: transparent;
-  font-weight: 700;
+  color: var(--bg-base); border-color: transparent; font-weight: 700;
 }
 
 /* Grille */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.75rem;
-}
+.projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.75rem; }
 
-/* Card glassmorphism */
+/* Cards */
 .project-glass-card {
-  background: rgba(15, 31, 53, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(15,31,53,0.55);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden; display: flex; flex-direction: column;
   transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
 }
 .project-glass-card:hover {
@@ -223,140 +187,207 @@
   box-shadow: 0 20px 56px rgba(0,0,0,0.55), 0 0 28px rgba(0,200,255,0.1);
 }
 
-/* Image zone */
-.project-card-img {
-  position: relative;
-  height: 185px;
-  overflow: hidden;
-}
-.project-card-img-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.6s ease;
-}
+/* Image */
+.project-card-img { position: relative; height: 185px; overflow: hidden; }
+.project-card-img-bg { position: absolute; inset: 0; transition: transform 0.6s ease; }
 .project-glass-card:hover .project-card-img-bg { transform: scale(1.06); }
 
-/* Fonds par projet */
-.cable     { background: linear-gradient(135deg,#061420 0%,#0d3b5e 50%,#083050 100%); }
-.adsb      { background: linear-gradient(135deg,#060b14 0%,#0c1e36 50%,#102544 100%); }
-.tnt       { background: linear-gradient(135deg,#0b0f1a 0%,#18103a 50%,#281060 100%); }
-.reseau    { background: linear-gradient(135deg,#061420 0%,#092a18 50%,#0c3520 100%); }
-.voip      { background: linear-gradient(135deg,#0f0a1e 0%,#1a0f38 50%,#240f4a 100%); }
-.wireshark { background: linear-gradient(135deg,#0a1020 0%,#0e1828 50%,#142035 100%); }
+.cable { background: linear-gradient(135deg,#061420,#0d3b5e,#083050); }
+.adsb  { background: linear-gradient(135deg,#060b14,#0c1e36,#102544); }
+.tnt   { background: linear-gradient(135deg,#0b0f1a,#18103a,#281060); }
 
-/* Emoji déco dans chaque fond */
-.cable::after     { content:'🌊'; }
-.adsb::after      { content:'📡'; }
-.tnt::after       { content:'📺'; }
-.reseau::after    { content:'🖧'; }
-.voip::after      { content:'📞'; }
-.wireshark::after { content:'🔍'; }
-
+.cable::after { content:'🌊'; }
+.adsb::after  { content:'📡'; }
+.tnt::after   { content:'📺'; }
 .project-card-img-bg::after {
-  position: absolute;
-  font-size: 5.5rem;
-  bottom: -0.75rem;
-  right: 1rem;
-  opacity: 0.22;
-  pointer-events: none;
-  line-height: 1;
+  position: absolute; font-size: 5.5rem;
+  bottom: -0.75rem; right: 1rem; opacity: 0.22;
+  pointer-events: none; line-height: 1;
 }
 
-/* Tags sur l'image */
 .project-card-img-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+  position: absolute; bottom: 0; left: 0; right: 0;
   padding: 0.75rem 1rem;
   background: linear-gradient(to top, rgba(6,11,20,0.92), transparent);
 }
 .project-card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 
-/* Corps */
+/* Body */
 .project-card-body {
   padding: 1.25rem 1.5rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 0.55rem;
+  display: flex; flex-direction: column; flex: 1; gap: 0.55rem;
 }
 .project-card-body h3 {
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1.4;
+  font-family: var(--font-display); font-size: 1rem; font-weight: 600;
+  color: var(--text-primary); line-height: 1.4;
 }
 .project-card-body p {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  flex: 1;
+  font-size: 0.88rem; color: var(--text-secondary); line-height: 1.7; flex: 1;
 }
 
-/* Lien */
+/* Liens */
+.project-links-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem; }
 .project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  margin-top: 0.5rem;
-  font-size: 0.78rem;
-  font-family: var(--font-display);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--accent-cyan);
-  border: 1px solid var(--border);
-  background: var(--accent-glow);
-  padding: 0.45rem 0.9rem;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition);
-  text-decoration: none;
-  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-size: 0.78rem; font-family: var(--font-display);
+  font-weight: 600; letter-spacing: 0.06em;
+  color: var(--accent-cyan); border: 1px solid var(--border);
+  background: var(--accent-glow); padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm); transition: all var(--transition);
+  text-decoration: none; cursor: pointer;
 }
 .project-link:hover {
   border-color: var(--border-hover);
-  background: rgba(0,200,255,0.18);
-  color: #fff;
-  transform: translateX(4px);
+  background: rgba(0,200,255,0.18); color: #fff;
+}
+.project-link-alt {
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+.project-link-alt:hover {
+  color: var(--accent-cyan);
+  border-color: var(--border-hover);
+  background: var(--accent-glow);
 }
 
-/* Filtre masquage */
 .project-glass-card.hidden { display: none; }
+
+/* ══════ MODALE ══════ */
+.pdf-modal {
+  position: fixed; inset: 0; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+.pdf-modal.is-open { opacity: 1; pointer-events: all; }
+
+.pdf-modal-backdrop {
+  position: absolute; inset: 0;
+  background: rgba(4,8,16,0.82);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+
+.pdf-modal-box {
+  position: relative; z-index: 1;
+  width: min(92vw, 1100px); height: min(90vh, 820px);
+  background: rgba(13,24,38,0.95);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 40px rgba(0,200,255,0.08);
+  display: flex; flex-direction: column; overflow: hidden;
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.pdf-modal.is-open .pdf-modal-box { transform: scale(1) translateY(0); }
+
+.pdf-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); flex-shrink: 0;
+}
+.pdf-modal-title {
+  font-family: var(--font-display); font-size: 0.85rem; font-weight: 600;
+  letter-spacing: 0.06em; color: var(--text-secondary);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pdf-modal-close {
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  color: var(--text-secondary); width: 36px; height: 36px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; flex-shrink: 0; transition: all var(--transition);
+}
+.pdf-modal-close:hover {
+  background: rgba(255,80,80,0.15); border-color: rgba(255,80,80,0.4);
+  color: #ff6b6b; transform: rotate(90deg);
+}
+
+.pdf-modal-body { flex: 1; overflow: hidden; background: #0a0f1a; }
+.pdf-modal-body iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.pdf-modal-footer {
+  padding: 0.75rem 1.25rem; border-top: 1px solid var(--border);
+  display: flex; justify-content: flex-end; flex-shrink: 0;
+}
 
 /* Responsive */
 @media (max-width: 1000px) { .projects-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .projects-grid { grid-template-columns: 1fr; }
   .projects-filters { flex-wrap: wrap; gap: 0.5rem; }
   .filter-btn {
     border-radius: var(--radius-sm) !important;
     border: 1px solid var(--border) !important;
   }
+  .project-links-row { flex-direction: column; }
 }
 </style>
 
+<!-- ══════ JAVASCRIPT ══════ -->
 <script>
-(function() {
+(function () {
+
+  function isMobile() {
+    return window.innerWidth < 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  }
+
+  const modal    = document.getElementById("pdf-modal");
+  const backdrop = modal.querySelector(".pdf-modal-backdrop");
+  const closeBtn = document.getElementById("pdf-modal-close");
+  const iframe   = document.getElementById("pdf-modal-iframe");
+  const titleEl  = document.getElementById("pdf-modal-title");
+  const newWin   = document.getElementById("pdf-modal-newwin");
+
+  function openModal(url, title) {
+    iframe.src          = url;
+    titleEl.textContent = title || "Document";
+    newWin.href         = url;
+    modal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    document.body.style.overflow = "";
+    setTimeout(() => { iframe.src = ""; }, 300);
+  }
+
+  closeBtn.addEventListener("click", closeModal);
+  backdrop.addEventListener("click", closeModal);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+
+  function initPdfLinks() {
+    document.querySelectorAll(".pdf-preview-link").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url   = link.getAttribute("href");
+        const title = link.getAttribute("data-title") || "Document";
+        isMobile() ? window.open(url, "_blank") : openModal(url, title);
+      });
+    });
+  }
+
   function initFilters() {
     const btns  = document.querySelectorAll(".filter-btn");
     const cards = document.querySelectorAll(".project-glass-card");
-    if (!btns.length) return;
     btns.forEach(btn => {
       btn.addEventListener("click", () => {
         btns.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          card.classList.toggle("hidden", filter !== "all" && card.dataset.category !== filter);
+        const f = btn.dataset.filter;
+        cards.forEach(c => {
+          c.classList.toggle("hidden", f !== "all" && c.dataset.category !== f);
         });
       });
     });
   }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initFilters);
+    document.addEventListener("DOMContentLoaded", () => { initPdfLinks(); initFilters(); });
   } else {
+    initPdfLinks();
     initFilters();
   }
+
 })();
 </script>
