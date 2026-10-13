@@ -1,22 +1,58 @@
+<a class="skip-link" href="#main">Aller au contenu</a>
+
 <header class="site-header">
   <div class="header-inner">
 
-    <!-- LOGO (PAS un lien) -->
     <div class="logo">
-      <span class="logo-left">PORTFOLIO</span>
-      <span class="logo-right">
-        <span>YANN</span>
-        <span>FELIX</span>
+      <svg class="logo-mark" viewBox="0 0 48 48" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <defs>
+          <linearGradient id="logo-grad" x1="6" y1="44" x2="42" y2="6" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#3a7bd5" />
+            <stop offset="1" stop-color="#00c8ff" />
+          </linearGradient>
+        </defs>
+        <path d="M8 14 Q9 40 34 41 Q17 34 8 14 Z" fill="url(#logo-grad)" stroke="url(#logo-grad)" stroke-width="1.6" />
+        <path d="M19 30.5 L25.5 22.5" stroke="url(#logo-grad)" stroke-width="2.4" />
+        <path d="M15 34.5 V44 M10.5 44 H19.5" stroke="#3a7bd5" stroke-width="2.4" />
+        <circle cx="25.5" cy="22.5" r="2.6" fill="#00c8ff" stroke="none" />
+        <path d="M26.7 15.6 A7 7 0 0 1 32.4 21.3" stroke="#00c8ff" stroke-width="2.4" />
+        <path d="M27.6 10.7 A12 12 0 0 1 37.3 20.4" stroke="#00c8ff" stroke-width="2.4" opacity="0.65" />
+        <path d="M28.5 5.8 A17 17 0 0 1 42.2 19.5" stroke="#00c8ff" stroke-width="2.4" opacity="0.35" />
+      </svg>
+      <span class="logo-text">
+        <span class="logo-name">Yann FELIX</span>
+        <span class="logo-tagline">Réseaux &amp; Télécoms</span>
       </span>
     </div>
 
-    <!-- NAVIGATION -->
-    <nav class="main-nav">
-      <a href="/index.html">ACCUEIL</a>
-      <a href="/pages/about.html">À PROPOS</a>
-      <a href="/pages/projects.html">PROJETS</a>
-      <a href="/pages/skills.html">COMPÉTENCES</a>
-      <a href="/pages/contact.html">CONTACT</a>
+    <button class="nav-toggle" type="button" aria-label="Ouvrir le menu"
+            aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
+      <a href="{{root}}index.html">Accueil</a>
+      <a href="{{root}}pages/about.html">À propos</a>
+      <a href="{{root}}pages/projects.html">Projets</a>
+      <a href="{{root}}pages/skills.html">Compétences</a>
+      <a href="{{root}}pages/contact.html">Contact</a>
+
+      <div class="nav-tools">
+        <button type="button" class="tool-btn theme-toggle" aria-label="Passer au thème clair" title="Passer au thème clair">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+
+        <div class="lang-switch" role="group" aria-label="Langue">
+          <button type="button" data-lang="fr" lang="fr" aria-pressed="true" title="Français">FR</button>
+          <button type="button" data-lang="en" lang="en" aria-pressed="false" title="English">EN</button>
+        </div>
+      </div>
     </nav>
 
   </div>

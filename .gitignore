@@ -1,0 +1,12 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs / outils
+*.log
+*.swp
+node_modules/
+
+# Sauvegarde locale de l'ancien site (zip créé lors de la refonte)
+_sauvegarde_ancien_site.zip

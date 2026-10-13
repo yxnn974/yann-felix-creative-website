@@ -2,21 +2,40 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Compétences – Yann Félix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Thème et langue : choix mémorisé, sinon préférences du navigateur (appliqués avant l'affichage) -->
+  <script>
+    (function () {
+      var d = document.documentElement, s = {};
+      try { s = localStorage; } catch (e) {}
+      var l = new URLSearchParams(location.search).get("lang") || s.lang || navigator.language || "fr";
+      var t = s.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      d.lang = String(l).slice(0, 2) === "fr" ? "fr" : "en";
+      d.dataset.theme = t === "light" ? "light" : "dark";
+    })();
+  </script>
+  <title>Compétences – Yann Félix</title>
+  <meta name="description" content="Compétences en télécommunications, réseaux, systèmes Linux et développement de Yann Félix, étudiant en BUT Réseaux &amp; Télécommunications." />
+  <meta name="theme-color" content="#060b14" />
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="../css/portfolio.css" />
 </head>
 
-<body>
+<body data-root="../"
+      data-title-en="Skills – Yann Félix"
+      data-desc-en="Skills of Yann Félix in telecommunications, networking, Linux systems and development, Networks &amp; Telecommunications BUT student.">
 
-  <div data-include="../includes/header.html"></div>
+  <div data-include="header"></div>
 
-  <main>
-    <div data-include="../includes/skills.html"></div>
-  </main>
+  <main id="main" class="page" data-include="skills"></main>
 
-  <div data-include="../includes/footer.html"></div>
+  <div data-include="footer"></div>
 
-  <script src="../js/include.js"></script>
+  <noscript><p class="notice">Ce site a besoin de JavaScript pour s'afficher. / This site needs JavaScript to display.</p></noscript>
+  <script src="../js/include.js" defer></script>
 </body>
 </html>

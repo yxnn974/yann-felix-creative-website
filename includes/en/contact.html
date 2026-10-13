@@ -1,0 +1,56 @@
+<section class="section">
+  <div class="container">
+
+    <h1 class="section-title gradient-text">Contact</h1>
+    <div class="section-divider"></div>
+
+    <div class="contact-grid">
+
+      <div class="card">
+        <h2 class="card-title">Information</h2>
+        <p>
+          IUT de La Réunion<br />
+          Saint-Pierre
+        </p>
+        <p class="contact-email">
+          Email:
+          <a href="mailto:contact@yannfelix.com">contact@yannfelix.com</a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 class="card-title">Write to me</h2>
+
+        <!--
+          data-endpoint: address of a form service (e.g. https://formspree.io/f/xxxxxx).
+          Left empty, the button opens the mail client with the message filled in.
+        -->
+        <form id="contact-form" data-endpoint="" data-email="contact@yannfelix.com">
+          <label>
+            Name
+            <input type="text" name="name" autocomplete="name" required maxlength="80" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required maxlength="120" />
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" required minlength="10" maxlength="3000"></textarea>
+          </label>
+
+          <!-- Invisible bot trap field -->
+          <div class="hp" aria-hidden="true">
+            <label>Do not fill in <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <button type="submit" class="btn btn-primary full-width">Send</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>

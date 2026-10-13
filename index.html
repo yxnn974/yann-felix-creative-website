@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio Yann Félix</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Thème et langue : choix mémorisé, sinon préférences du navigateur (appliqués avant l'affichage) -->
+  <script>
+    (function () {
+      var d = document.documentElement, s = {};
+      try { s = localStorage; } catch (e) {}
+      var l = new URLSearchParams(location.search).get("lang") || s.lang || navigator.language || "fr";
+      var t = s.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      d.lang = String(l).slice(0, 2) === "fr" ? "fr" : "en";
+      d.dataset.theme = t === "light" ? "light" : "dark";
+    })();
+  </script>
+  <title>Portfolio Yann Félix — Étudiant BUT Réseaux &amp; Télécoms</title>
+  <meta name="description" content="Portfolio de Yann Félix, étudiant en BUT Réseaux &amp; Télécommunications à l'IUT de La Réunion : projets, compétences et contact." />
+  <meta name="theme-color" content="#060b14" />
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Space+Grotesk:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="./css/portfolio.css" />
+
+  <!-- Le hero est injecté en JavaScript : on charge son image sans attendre -->
+  <link rel="preload" as="image" href="./images/antenne-parabole-space.jpg" fetchpriority="high" />
 </head>
 
-<body>
+<body data-root="./"
+      data-title-en="Yann Félix Portfolio — Networks &amp; Telecom BUT student"
+      data-desc-en="Portfolio of Yann Félix, Networks &amp; Telecommunications BUT student at the IUT de La Réunion: projects, skills and contact.">
 
-  <!-- HEADER (toujours en haut) -->
-  <div data-include="./includes/header.html"></div>
+  <div data-include="header"></div>
 
-  <!-- HERO PLEIN ÉCRAN SANS CONTAINER -->
-  <div data-include="./includes/hero.html"></div>
+  <main id="main" data-include="hero"></main>
 
-  <!-- FOOTER JUSTE APRÈS LE HERO -->
-  <div data-include="./includes/footer.html"></div>
+  <div data-include="footer"></div>
 
-  <script src="./js/include.js"></script>
+  <noscript><p class="notice">Ce site a besoin de JavaScript pour s'afficher. / This site needs JavaScript to display.</p></noscript>
+  <script src="./js/include.js" defer></script>
 </body>
 </html>

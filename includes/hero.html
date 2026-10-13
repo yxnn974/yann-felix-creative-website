@@ -1,45 +1,38 @@
-<section id="hero" class="hero-landing">
+<section class="hero-landing" aria-label="Présentation">
 
-  <!-- SLIDER - FOND -->
-  <div class="hero-slider">
-
-    <img
-      src="./images/antenne-parabole-space.jpg"
-      class="hero-slide active"
-      alt="Antenne satellite de nuit"
-    />
-
-    <img
-      src="./images/parabole-sunset.jpg"
-      class="hero-slide"
-      alt="Parabole au coucher du soleil"
-    />
-
+  <div class="hero-slider" aria-hidden="true">
+    <img src="{{root}}images/antenne-parabole-space.jpg" class="hero-slide active" alt=""
+         width="1920" height="1280" fetchpriority="high" decoding="async" />
+    <img src="{{root}}images/parabole-sunset.jpg" class="hero-slide" alt=""
+         width="1920" height="1280" decoding="async" />
   </div>
 
-  <!-- OVERLAY SOMBRE -->
   <div class="hero-bg-overlay"></div>
 
-  <!-- CONTENU CENTRÉ -->
   <div class="hero-content">
     <span class="hero-badge">Réseaux • Télécoms • Sécurité</span>
 
     <h1 class="hero-title">Yann FELIX</h1>
 
     <p class="hero-subtitle">
-      Étudiant en Réseaux & Télécommunications à l’IUT de La Réunion.
+      Étudiant en Réseaux &amp; Télécommunications à l’IUT de La Réunion.
     </p>
 
+    <!-- Mots qui défilent : attribut data-words, séparés par | -->
     <p class="hero-text">
-      Passionné par <span id="typing"></span>
+      Passionné par
+      <span id="typing"
+            data-words="les systèmes satellitaires.|les infrastructures télécoms.|la cybersécurité.|la technologie réseau.">les systèmes satellitaires.</span>
     </p>
 
     <div class="hero-actions">
-      <a href="#" class="btn btn-primary">Télécharger mon CV</a>
-      <a href="#contact" class="btn btn-outline">Me contacter</a>
+      <!-- Visible seulement si documents/cv_yann_felix.pdf existe -->
+      <a id="cv-link" href="{{root}}documents/cv_yann_felix.pdf" class="btn btn-primary"
+         target="_blank" rel="noopener">Télécharger mon CV</a>
+      <a href="{{root}}pages/contact.html" class="btn btn-outline">Me contacter</a>
     </div>
 
-    <div class="hero-tags">
+    <div class="tags hero-tags">
       <span class="tag">TCP/IP</span>
       <span class="tag">Network Security</span>
       <span class="tag">Linux</span>
@@ -48,12 +41,10 @@
     </div>
   </div>
 
-  <!-- FLECHES DE NAVIGATION -->
-  <button class="hero-arrow hero-prev">❮</button>
-  <button class="hero-arrow hero-next">❯</button>
+  <button type="button" class="hero-arrow hero-prev" aria-label="Image précédente">❮</button>
+  <button type="button" class="hero-arrow hero-next" aria-label="Image suivante">❯</button>
 
-  <!-- SCROLL INDICATOR -->
-  <div class="scroll-indicator">
+  <div class="scroll-indicator" aria-hidden="true">
     <span class="scroll-indicator-arrow">⌄</span>
   </div>
 

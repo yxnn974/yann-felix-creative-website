@@ -1,0 +1,126 @@
+<section class="section">
+  <div class="container">
+
+    <h1 class="section-title gradient-text">My Networks &amp; Telecom Projects</h1>
+    <div class="section-divider"></div>
+    <p class="section-intro">
+      Discover the projects I carried out during my first year of the BUT in
+      Networks &amp; Telecommunications.
+    </p>
+
+    <!-- Filters: data-filter must match a word of the cards' data-category -->
+    <div class="projects-filters" role="group" aria-label="Filter projects">
+      <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter-btn" data-filter="reseau" aria-pressed="false">Network</button>
+      <button type="button" class="filter-btn" data-filter="telecom" aria-pressed="false">Telecom</button>
+      <button type="button" class="filter-btn" data-filter="dev" aria-pressed="false">Development</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="pcard fade-in-up" data-category="reseau telecom">
+        <div class="pcard-visual">
+          <img src="{{root}}images/cable_sous_marin.jpg" class="pcard-img"
+               alt="A submarine cable being laid from a cable-laying ship"
+               width="335" height="150" loading="lazy" decoding="async" />
+          <span class="pcard-badge" role="img" title="Academic project" aria-label="Academic project">🎓</span>
+        </div>
+        <ul class="pcard-tags-strip" aria-label="Keywords">
+          <li class="pcard-tag">Network</li>
+          <li class="pcard-tag">Telecom</li>
+          <li class="pcard-tag">Optical fibre</li>
+        </ul>
+        <div class="pcard-body">
+          <h2 class="pcard-title">Réunion – Mayotte Submarine Cable</h2>
+          <p class="pcard-desc">
+            Preventive maintenance of a 1,500&nbsp;km SMART cable.
+            AI-based monitoring, AUV drones and a digital twin.
+          </p>
+        </div>
+        <div class="pcard-footer">
+          <a class="pcard-btn" href="{{root}}documents/projet_cable_smart.pdf" target="_blank" rel="noopener">Slides (PDF, FR)</a>
+          <a class="pcard-btn pcard-btn--alt" href="{{root}}documents/projet_ppp.pdf" target="_blank" rel="noopener">Report (PDF, FR)</a>
+        </div>
+      </article>
+
+      <article class="pcard fade-in-up" data-category="telecom">
+        <div class="pcard-visual">
+          <img src="{{root}}images/adsb_radar.jpg" class="pcard-img"
+               alt="Radar screen showing aircraft picked up from their ADS-B signal"
+               width="800" height="452" loading="lazy" decoding="async" />
+          <span class="pcard-badge" role="img" title="Academic project" aria-label="Academic project">🎓</span>
+        </div>
+        <ul class="pcard-tags-strip" aria-label="Keywords">
+          <li class="pcard-tag">RTL-SDR</li>
+          <li class="pcard-tag">ADS-B / Mode-S</li>
+          <li class="pcard-tag">1090 MHz</li>
+        </ul>
+        <div class="pcard-body">
+          <h2 class="pcard-title">ADS-B Reception — Air Traffic Radar</h2>
+          <p class="pcard-desc">
+            Receiving and decoding ADS-B signals with an RTL-SDR dongle and a
+            collinear antenna, measuring the received level and tracking aircraft.
+          </p>
+        </div>
+        <div class="pcard-footer">
+          <a class="pcard-btn" href="{{root}}documents/tp2_reception_avions.pdf" target="_blank" rel="noopener">View document (FR)</a>
+        </div>
+      </article>
+
+      <article class="pcard fade-in-up" data-category="telecom">
+        <div class="pcard-visual">
+          <img src="{{root}}images/tnt_pic.jpg" class="pcard-img"
+               alt="Yagi antenna for digital TV reception on a mast"
+               width="800" height="763" loading="lazy" decoding="async" />
+          <span class="pcard-badge" role="img" title="Academic project" aria-label="Academic project">🎓</span>
+        </div>
+        <ul class="pcard-tags-strip" aria-label="Keywords">
+          <li class="pcard-tag">DVB-T</li>
+          <li class="pcard-tag">Yagi antenna</li>
+          <li class="pcard-tag">UHF</li>
+        </ul>
+        <div class="pcard-body">
+          <h2 class="pcard-title">Digital TV &amp; Terrestrial Broadcast Analysis</h2>
+          <p class="pcard-desc">
+            Choosing the transmitter, aiming a Yagi antenna, measuring level, MER
+            and C/N with a TV analyser, then receiving through a USB dongle.
+          </p>
+        </div>
+        <div class="pcard-footer">
+          <a class="pcard-btn" href="{{root}}documents/tp1_reception_tnt.pdf" target="_blank" rel="noopener">View document (FR)</a>
+        </div>
+      </article>
+
+      <article class="pcard fade-in-up" data-category="telecom">
+        <div class="pcard-visual">
+          <img src="{{root}}images/bilan_liaison.svg" class="pcard-img"
+               alt="Diagram of a radio link between two antennas with a Fresnel ellipsoid"
+               width="1280" height="720" loading="lazy" decoding="async" />
+          <span class="pcard-badge" role="img" title="Academic project" aria-label="Academic project">🎓</span>
+        </div>
+        <ul class="pcard-tags-strip" aria-label="Keywords">
+          <li class="pcard-tag">Microwave link</li>
+          <li class="pcard-tag">Fresnel</li>
+          <li class="pcard-tag">Link budget</li>
+        </ul>
+        <div class="pcard-body">
+          <h2 class="pcard-title">Microwave Link Budget</h2>
+          <p class="pcard-desc">
+            Sizing a 4&nbsp;×&nbsp;2&nbsp;Mbit/s link over 15&nbsp;km: available channels,
+            Fresnel zone, attenuation and margin depending on the antenna
+            diameter.
+          </p>
+        </div>
+        <div class="pcard-footer">
+          <a class="pcard-btn" href="{{root}}documents/td_bilan_liaison.pdf" target="_blank" rel="noopener">View document (FR)</a>
+        </div>
+      </article>
+
+    </div>
+
+    <p id="projects-empty" class="projects-empty" hidden>
+      No project in this category yet.
+    </p>
+
+  </div>
+</section>
